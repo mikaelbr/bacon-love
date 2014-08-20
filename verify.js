@@ -63,7 +63,7 @@ function run (exercise, usersolution, test, testTitle, callback) {
     stream = usersolution.apply(usersolution, guaranteeArray(test.input));
   } catch (e) { }
 
-  if (!isStream(stream)) {
+  if (!isBaconInstance(stream)) {
     exercise.emit('fail', 'The exported function should always return an event stream or property.');
     return false;
   }
@@ -79,7 +79,7 @@ function run (exercise, usersolution, test, testTitle, callback) {
   });
 }
 
-function isStream (obj) {
+function isBaconInstance (obj) {
   return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
 }
 
