@@ -20,7 +20,7 @@ var run = {
 var testing = {
     'Should emit values that sum up to 6': {
         input: run.input,
-        shouldbe: run.expect
+        expect: run.expect
     }
 };
 
