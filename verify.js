@@ -12,7 +12,8 @@ module.exports = function (tests, testRun) {
   var exercise = _.compose(execute, filecheck)(exerciser());
 
   exercise.addProcessor(function (mode, callback) {
-    var isRunMode = mode === 'run', self = this, passed = true, usersolution;
+    var isRunMode = mode === 'run';
+    var passed = true;
     var usersolution;
 
     try{
@@ -32,7 +33,7 @@ module.exports = function (tests, testRun) {
     }
 
     if(isRunMode) {
-      return run(self, usersolution, testRun, callback);
+      return run(this, usersolution, testRun, callback);
     }
 
     var whenAllTestsDone = _.after(tests.length, function() {
@@ -40,11 +41,11 @@ module.exports = function (tests, testRun) {
     });
 
     _.each(tests, function (test, testTitle) {
-      run(self, usersolution, test, testTitle, function (err, success) {
+      run(this, usersolution, test, testTitle, function (err, success) {
         if (!success) passed = false;
         whenAllTestsDone();
       });
-    });
+    }, this);
   });
 
   return exercise;
