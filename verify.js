@@ -8,6 +8,8 @@ var exerciser = require('workshopper-exercise');
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 
+var isFirstItemBaconInstance = _.compose(isBaconInstance, _.sample);
+
 module.exports = function (tests, testRun) {
   var exercise = _.compose(execute, filecheck)(exerciser());
 
@@ -58,14 +60,14 @@ function run (exercise, usersolution, test, testTitle, callback) {
     callback = testTitle;
     testTitle = void 0;
   }
-  testTitle = testTitle || 'Test run';
+  testTitle = testTitle || 'Simulated testrun';
 
   try {
     stream = usersolution.apply(usersolution, guaranteeArray(test.input));
   } catch (e) { }
 
-  if (!isBaconInstance(stream)) {
-    exercise.emit('fail', 'The exported function should always return an event stream or property.');
+  if (!isBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
+    exercise.emit('fail', 'The exported function should always return an event stream or property (or a collection of them for ex2.).');
     return false;
   }
 

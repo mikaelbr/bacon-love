@@ -12,6 +12,7 @@
   "dependencies": {
     "baconjs": "^0.7.22",
     "lodash": "^2.4.1",
+    "q": "^1.0.1",
     "workshopper": "^1.3.2",
     "workshopper-exercise": "^1.1.0"
   }
