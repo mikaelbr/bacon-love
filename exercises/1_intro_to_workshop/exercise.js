@@ -13,7 +13,6 @@ var run = {
             .onValue(function (val) {
                 done(val !== expected);
             });
-    }
 };
 
 
