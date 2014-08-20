@@ -40,7 +40,7 @@ module.exports = function (tests, testRun) {
     });
 
     _.each(tests, function (item, element) {
-      run(self, usersolution, testRun, element, function (err, success) {
+      run(self, usersolution, item, element, function (err, success) {
         if (!success) passed = false;
         done();
       });
