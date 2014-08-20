@@ -36,7 +36,7 @@ module.exports = function (tests, testRun) {
       return run(this, usersolution, testRun, callback);
     }
 
-    var whenAllTestsDone = _.after(tests.length, function() {
+    var whenAllTestsDone = _.after(_.size(tests), function() {
       callback(null, passed);
     });
 
