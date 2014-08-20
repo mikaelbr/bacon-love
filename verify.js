@@ -60,7 +60,7 @@ function run (exercise, usersolution, test, testTitle, callback) {
   testTitle = testTitle || 'Test run';
 
   try {
-    stream = fn.apply(fn, garanteeArray(test.input));
+    stream = usersolution.apply(usersolution, garanteeArray(test.input));
   } catch (e) { }
 
   if (!isStream(stream)) {
