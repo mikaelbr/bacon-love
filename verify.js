@@ -60,7 +60,7 @@ function run (exercise, usersolution, test, testTitle, callback) {
   testTitle = testTitle || 'Test run';
 
   try {
-    stream = usersolution.apply(usersolution, garanteeArray(test.input));
+    stream = usersolution.apply(usersolution, guaranteeArray(test.input));
   } catch (e) { }
 
   if (!isStream(stream)) {
@@ -83,6 +83,6 @@ function isStream (obj) {
   return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
 }
 
-function garanteeArray (input) {
+function guaranteeArray (input) {
   return _.isArray(input) ? input : [input];
 }
