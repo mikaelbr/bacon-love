@@ -62,9 +62,9 @@ function run (exercise, usersolution, test, testTitle, callback) {
   }
   testTitle = testTitle || 'Simulated testrun';
 
-  try {
+  // try {
     stream = usersolution.apply(usersolution, guaranteeArray(test.input));
-  } catch (e) { }
+  // } catch (e) { }
 
   if (!isBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
     exercise.emit('fail', 'The exported function should always return an event stream or property (or a collection of them for ex2.).');
