@@ -11,10 +11,10 @@ var click = new Bacon.Bus();
 var run = {
   input: [west, east, click.delay(10)],
 
-  expect: function (stream, exercise, done) {
+  expect: function (stream, exercise, assert) {
     stream.onValue(function (sum) {
       console.log("Sum:", sum);
-      done(sum === 3);
+      assert(sum === 3);
     });
 
     click.push(true);

@@ -16,9 +16,9 @@ var riverFlowLimit = 2000;
 var run = {
   input: [cubicFlow, inCriticalMode, isOnBreak, isRiverFlowing, shouldBother, riverFlowLimit],
 
-  expect: function (stream, exercise, done) {
+  expect: function (stream, exercise, assert) {
     stream.onValue(function (report) {
-      done(report === true);
+      assert(report === true);
     });
 
     cubicFlow.push(4000);
@@ -34,9 +34,9 @@ var testing = {
     'Some other thing here': {
       input: [cubicFlow, inCriticalMode, isOnBreak, isRiverFlowing, shouldBother, riverFlowLimit],
 
-      expect: function (stream, exercise, done) {
+      expect: function (stream, exercise, assert) {
         stream.onValue(function (report) {
-          done(report !== true);
+          assert(report !== true);
         });
 
         cubicFlow.push(1000);
