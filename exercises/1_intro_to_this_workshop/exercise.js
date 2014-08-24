@@ -4,14 +4,14 @@ var verify = require("../../verify.js");
 
 var run = {
     input: void 0,
-    expect: function (stream, ex, done) {
+    expect: function (stream, ex, assert) {
         var expected = 6;
         stream
             .fold(0, function (a, b) {
                 return a + b;
             })
             .onValue(function (val) {
-                done(val !== expected);
+                assert(val === expected);
             });
     }
 };

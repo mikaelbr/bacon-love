@@ -18,9 +18,7 @@ var run = {
 
   expect: function (stream, exercise, done) {
     stream.onValue(function (report) {
-      console.log("fkdjskfjds");
-      console.log(report);
-      done(report !== true);
+      done(report === true);
     });
 
     cubicFlow.push(4000);
@@ -41,7 +39,7 @@ var testing = {
           done(report !== true);
         });
 
-        cubicFlow.push(4000);
+        cubicFlow.push(1000);
       }
     }
 };

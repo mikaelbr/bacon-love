@@ -21,10 +21,10 @@ var eventTarget = new Emitter();
 var run = {
   input: [deferred.promise, eventTarget, callback, array],
 
-  expect: function (streams, exercise, done) {
+  expect: function (streams, exercise, assert) {
     var fails = false;
     var maybeFinished = _.after(_.size(streams), function () {
-      done(fails);
+      assert(!fails);
     });
     var setPassed = function (success) {
       if (!success) fails = true;

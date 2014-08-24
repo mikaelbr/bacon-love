@@ -71,8 +71,8 @@ function run (exercise, usersolution, test, testTitle, callback) {
     return false;
   }
 
-  test.expect(stream, exercise, function (err) {
-    if (err) {
+  test.expect(stream, exercise, function (success) {
+    if (!success) {
       exercise.emit('fail', testTitle);
       return callback(null, false);
     }
