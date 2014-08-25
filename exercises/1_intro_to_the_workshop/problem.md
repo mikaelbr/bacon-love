@@ -46,7 +46,7 @@ by the given interval.
 
 To get familiar with this workshop format, you will have to create a file using the
 template below and create and return an eventstream with values that sum up to `6`.
-The event stream should only emit `3` values.
+The event stream should only emit `3` values. The interval isn't important.
 
 ## Template
 
