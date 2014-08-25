@@ -14,44 +14,50 @@ See available commands by running the following command `bacon-love help`.
 Try to run a solution by doing ```bacon-love run solution-file.js``` or verify it by
 doing ```bacon-love verify solution-file.js```.
 
-In the exercises we will use [Bacon.js](http://github.com/baconjs/bacon.js) as an implementation
-for doing Functional Reactive Programming. The documentation of Bacon is pretty wast
-and you will have read a lot of it during this workshop.
+In the exercises we will use [Bacon.js](https://github.com/baconjs/bacon.js)
+as an implementation for doing Functional Reactive Programming. Bacon is well
+documented and you can find it at the github page. You will have to refer to
+it at different points during this workshop.
 
 Let's get started by doing a simple exercise.
 
 ## Introductory theory
 
-In short, Functional Reactive Programming (FRP) is about doing functional operations
-on lists over time. We can handle events as lazy lists that hasn't ended yet
-or where the next item is not yet known. This allows us to handle async programming
-with ease and handle user input or output in a simpler manner than we would using
-more imperative style programming.
+In short, Functional Reactive Programming (FRP) is functional programming with
+first class representation for values that vary over time. We can represent
+sequences of any event occuring at indeterminate points in time as a stream.
+This allows us to do async programming with ease and handle user input or
+output in a simpler manner than we would using more imperative style
+programming.
 
-In classic FRP, which we will be using here, we have two different concepts of data
-sources; Behaviours and Events. In this workshop we call this Properties and EventStreams,
-as this is what's used by the implementation [Bacon.js](http://github.com/baconjs/bacon.js).
+In classic FRP, which we will be using here, we have two different
+abstractions for data; Properties and EventStreams. Properties are continous
+values and EventStreams are discrete values. There are many ways of
+implementing the central concepts of Functional Reactive Programming, but in
+this workshop we will use [Bacon.js](https://github.com/baconjs/bacon.js).
+We'll take a closer look at Properties and EventStreams in the comming
+exercises.
 
-We'll see more about properties and eventsources in the comming exercises. All you
-need to know for this exercise is that an eventsource is a set of discrete occurances
-that we can handle like a list. For instance, mouse clicks can be an event source.
-
+In Bacon.js we can create Properties or EventStreams from sources through a
+series of constructors. The reason we need to construct an instance of a
+Bacon-type is that JavaScript is not naturally reactive (at the moment), so to
+get abstractions that are reactive we must wrap the data sources. For
+instance, mouse clicks can be a source for an EventStream.
 
 ## Problem description
 
-Using Bacon.js you have different ways of creating event sources. You can wrap data of
-different kinds to different reactive data types. One method you can use is `sequentially`,
-which takes an interval and an array of values which the event stream iterates over
-by the given interval.
+As mentioned, Bacon.js has different ways of creating reactive datatypes from
+various sources. One method you can use is `sequentially`, which takes an
+interval and an array of values which will create an EventStream that emits
+one value each interval untill all values have been emitted.
 
-To get familiar with this workshop format, you will have to create a file using the
-template below and create and return an eventstream with values that sum up to `6`.
-The event stream should only emit `3` values. The interval isn't important.
+To gain some familiarity with this workshop format, you will create a file
+using the template below. This file will create and return an EventStream with
+values that sum up to `6`. The interval isn't important.
 
 ## Template
 
 With a few exceptions the template to use for all exercises will be the following:
-
 
 ```javascript
 // include the Bacon.js library
