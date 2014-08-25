@@ -1,0 +1,65 @@
+[
+  {
+    "name": {
+      "first": "First",
+      "last": "Last"
+    },
+    "rating": {
+      "value": 7,
+      "max": 10
+    },
+    "readers": 123124,
+    "books": [
+      {
+        "title": "book1",
+        "pages": 123
+      },
+      {
+        "title": "book2",
+        "pages": 321
+      }
+    ]
+  },
+  {
+    "name": {
+      "first": "First",
+      "last": "Last"
+    },
+    "rating": {
+      "value": 7,
+      "max": 10
+    },
+    "readers": 123124,
+    "books": [
+      {
+        "title": "book1",
+        "pages": 123
+      },
+      {
+        "title": "book2",
+        "pages": 321
+      }
+    ]
+  },
+  {
+    "name": {
+      "first": "First",
+      "last": "Last"
+    },
+    "rating": {
+      "value": 7,
+      "max": 10
+    },
+    "readers": 123124,
+    "books": [
+      {
+        "title": "book1",
+        "pages": 123
+      },
+      {
+        "title": "book2",
+        "pages": 321
+      }
+    ]
+  }
+]
