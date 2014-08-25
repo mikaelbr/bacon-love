@@ -2,6 +2,7 @@
 
 var verify = require('../../verify.js');
 var Bacon = require('baconjs');
+var _ = require('lodash');
 var authors = require('./authors.json');
 
 var run = {
@@ -11,8 +12,12 @@ var run = {
       return author.name.last + ', ' + author.name.first;
     });
     stream
+      .fold([], function (acc, obj) {
+        acc.push(obj);
+        return acc;
+      })
       .onValue(function (val) {
-        assert(val === expected.shift());
+        assert(_.isEqual(val, expected));
       });
   }
 };

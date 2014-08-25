@@ -1,4 +1,4 @@
-# Mapping over values in an EventStream
+# Mapping and filtering over values in an EventStream
 
 As an introdution to mapping we will take a stream of authors on this form:
 ````json
