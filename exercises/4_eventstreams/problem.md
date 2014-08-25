@@ -46,7 +46,10 @@ you can poll the EventStream by a given interval, creating an EventStream with
 the values at the given time.
 
 Another way is by doing `.changes()`, which creates an EventStream with values
-from the changes of a property.
+from the changes of a property. The `.changes()` method does not include the
+value at the given time in the created EventStream. Alternative method
+`.toEventStream()` behaves the same way as `.changes()`, but includes the
+current value.
 
 Another powerful way of creating an EventStream from a property is to use the
 `.sampledBy(EventStream)` method. We will get more into this in the advanced
