@@ -10,8 +10,11 @@ var execute = require('workshopper-exercise/execute');
 
 var isFirstItemBaconInstance = _.compose(isBaconInstance, _.sample);
 
-module.exports = function (tests, testRun) {
+module.exports = function (tests, testRun, options) {
   var exercise = _.compose(execute, filecheck)(exerciser());
+
+  var before = options.before || _.noop;
+  var after = options.after || _.noop;
 
   exercise.addProcessor(function (mode, callback) {
     var isRunMode = mode === 'run';
@@ -51,36 +54,39 @@ module.exports = function (tests, testRun) {
   });
 
   return exercise;
-};
 
-function run (exercise, usersolution, test, testTitle, callback) {
-  var stream;
+  function run (exercise, usersolution, test, testTitle, callback) {
+    var stream;
 
-  if (typeof testTitle === 'function') {
-    callback = testTitle;
-    testTitle = void 0;
-  }
-  testTitle = testTitle || 'Simulated testrun';
+    if (typeof testTitle === 'function') {
+      callback = testTitle;
+      testTitle = void 0;
+    }
+    testTitle = testTitle || 'Simulated testrun';
 
-  // try {
-    stream = usersolution.apply(usersolution, guaranteeArray(test.input));
-  // } catch (e) { }
+    // try {
+      stream = usersolution.apply(usersolution, guaranteeArray(test.input));
+    // } catch (e) { }
 
-  if (!isBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
-    exercise.emit('fail', 'The exported function should always return an event stream or property (or a collection of them for ex2.).');
-    return false;
-  }
-
-  test.expect(stream, exercise, function (success) {
-    if (!success) {
-      exercise.emit('fail', testTitle);
-      return callback(null, false);
+    if (!isBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
+      exercise.emit('fail', 'The exported function should always return an event stream or property (or a collection of them for ex2.).');
+      return false;
     }
 
-    exercise.emit('pass', testTitle);
-    return callback(null, true);
-  });
-}
+    before(test, stream, exercise);
+    test.expect(stream, exercise, function (success) {
+      after(test, stream, exercise);
+
+      if (!success) {
+        exercise.emit('fail', testTitle);
+        return callback(null, false);
+      }
+
+      exercise.emit('pass', testTitle);
+      return callback(null, true);
+    });
+  }
+};
 
 function isBaconInstance (obj) {
   return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
