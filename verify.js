@@ -13,6 +13,7 @@ var isFirstItemBaconInstance = _.compose(isBaconInstance, _.sample);
 module.exports = function (tests, testRun, options) {
   var exercise = _.compose(execute, filecheck)(exerciser());
 
+  options = options || {};
   var before = options.before || _.noop;
   var after = options.after || _.noop;
 
