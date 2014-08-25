@@ -50,6 +50,7 @@ var run = {
 var options = {
   before: function () {
     console.log = function (prefix, val) {
+      process.stdout.write(_.toArray(arguments).join(' ') + '\n');
       loggedStrings.push(prefix);
     };
   },
