@@ -57,7 +57,7 @@ With a few exceptions the template to use for all exercises will be the followin
 // include the Bacon.js library
 var Bacon = require('baconjs');
 
-var streamGenerator = function(input1, input2, ...) {
+var streamGenerator = function(input1, input2 /* , ..., inputN */ ) {
   // return resulting stream
 };
 

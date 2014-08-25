@@ -1,6 +1,6 @@
 [
   "1. Intro to the workshop",
-  "2. Creating new data sources",
+  "2. Wrapping Values as Reactive Datatypes",
   "3. Subscription Based",
   "4. EventStreams",
   "5. Properties",
