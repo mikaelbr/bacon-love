@@ -14,7 +14,7 @@ See available commands by running the following command `bacon-love help`.
 Try to run a solution by doing ```bacon-love run solution-file.js``` or verify it by
 doing ```bacon-love verify solution-file.js```.
 
-In the exercises we will use [Bacon.js](github.com/baconjs/bacon.js) as an implementation
+In the exercises we will use [Bacon.js](http://github.com/baconjs/bacon.js) as an implementation
 for doing Functional Reactive Programming. The documentation of Bacon is pretty wast
 and you will have read a lot of it during this workshop.
 
@@ -30,7 +30,7 @@ more imperative style programming.
 
 In classic FRP, which we will be using here, we have two different concepts of data
 sources; Behaviours and Events. In this workshop we call this Properties and EventStreams,
-as this is what's used by the implementation [Bacon.js](github.com/baconjs/bacon.js).
+as this is what's used by the implementation [Bacon.js](http://github.com/baconjs/bacon.js).
 
 We'll see more about properties and eventsources in the comming exercises. All you
 need to know for this exercise is that an eventsource is a set of discrete occurances
