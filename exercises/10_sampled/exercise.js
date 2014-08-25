@@ -13,7 +13,6 @@ var run = {
 
   expect: function (stream, exercise, assert) {
     stream.onValue(function (sum) {
-      console.log("Sum:", sum);
       assert(sum === 3);
     });
 
