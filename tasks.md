@@ -2,23 +2,24 @@
 
 ## Introductory
 
-1. Create own event streams (all sources)
-2. Subscribers
-3. Properties vs EventStreams
+1. Intro to workshop
+2. Create own event streams (all sources)
+3. Subscribers / tap
+4. Properties vs EventStreams
 
 ## Combinators
 
-4. Filter -> Map -> Log based on given event stream as input
-5. Fold/Scan
-6. Merge/Combine
-7. Combination of multiples as templates
+5. Filter -> Map -> Log based on given event stream as input
+6. Fold/Scan
+7. Merge/Combine
+8. Combination of multiples as templates
 
 ## Advanced
 
-8. And/or
-9. Sampling
-10. Throttling/Delays
-11. Flatmaps
+9. And/or
+10. Sampling
+11. Throttling/Delays
+12. Flatmaps
 
 
 ## Beyond
