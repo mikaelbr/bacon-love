@@ -1,7 +1,7 @@
 # Mapping and filtering over values in an EventStream
 
 As an introdution to mapping we will take a stream of authors on this form:
-````json
+```json
 {
   "name": {
     "first": "First",
