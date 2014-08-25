@@ -11,7 +11,7 @@ As an introdution to mapping we will take a stream of authors on this form:
     "value": 7,
     "max": 10
   },
-  "readers": 123124,
+  "readers": 12345,
   "books": [
     {
       "title": "book1",
@@ -25,7 +25,11 @@ As an introdution to mapping we will take a stream of authors on this form:
 }
 ```
 
-What you should return is a stream of the names of the authors on the form: "last, first".
+What you should do to solve this exercise is to return these three things:
+
+a. A stream of author names on the form "last, first"
+b. A stream of authors with over 10 000 readers
+c. A stream of author names with over 10 000 readers
 
 ## Template
 
@@ -35,6 +39,10 @@ What you should return is a stream of the names of the authors on the form: "las
 var Bacon = require('baconjs');
 
 module.exports = function (authors) {
-  return authorNames;
+  return {
+    a: authorNames,
+    b: popularAuthors,
+    c: popularAuthorNames
+  };
 };
 ```
