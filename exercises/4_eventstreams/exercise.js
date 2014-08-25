@@ -15,6 +15,10 @@ var run = {
     }
 
     streams.fold('', '.concat').onValue(function (str) {
+      if (str !== expectedString) {
+        exercise.emit('fail', 'You need to admit that Baconisdelicious.')
+      }
+
       assert(str === expectedString && isEventStream);
     });
   }
