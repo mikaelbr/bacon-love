@@ -5,7 +5,8 @@
 1. Intro to workshop
 2. Create own event streams (all sources)
 3. Subscribers / tap
-4. Properties vs EventStreams
+4. EventStreams
+5. Properties
 
 ## Combinators
 
