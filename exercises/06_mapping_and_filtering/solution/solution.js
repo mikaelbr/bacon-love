@@ -1,21 +1,22 @@
 var Bacon = require('baconjs');
 
-module.exports = function (authors) {
-  function authorName(author) {
-    return author.name.last + ', ' + author.name.first;
-  }
+module.exports = function (enteringShips, destroyerPosition) {
+  function shipMapper(ship) { return ship.type === 'zrrk' ? 1 : 0; }
 
-  var authorNames = authors.map(authorName);
-
-  var popularAuthors = authors.filter(function(author) {
-    return author.readers > 10000;
+  var threat = destroyerPosition.map(function (pos) {
+    if(pos < 1) return 'extreme';
+    if(pos >= 1 && pos <= 2) return 'high';
+    if(pos > 2 && pos < 5) return 'medium';
+    return 'low';
   });
 
-  var popularAuthorNames = popularAuthors.map(authorName);
+  var entered = destroyerPosition.map(function (pos) {
+    return pos < 1;
+  });
 
   return {
-    a: authorNames,
-    b: popularAuthors,
-    c: popularAuthorNames
+    ships: enteringShips.map(shipMapper),
+    threat: threat,
+    postArrivalShips: enteringShips.filter(entered).map(shipMapper)
   };
 };

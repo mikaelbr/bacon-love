@@ -3,54 +3,114 @@
 var verify = require('../../verify.js');
 var Bacon = require('baconjs');
 var _ = require('lodash');
-var authors = require('./authors.json');
 
-function authorName(author) {
-  return author.name.last + ', ' + author.name.first;
-}
+var zrrkShip = {type: "zrrk"};
+var purpleShip = {type: "purple"};
+var earthianShip = {type: "earthian"};
+var martianShip = {type: "martian"};
 
-function validate(stream, expected) {
-  return stream
-    .fold([], '.concat')
-    .map(function (v) {
-      return _.isEqual(v, expected);
-    });
-}
+var threats = ['low', 'low', 'medium', 'high', 'extreme', 'extreme'];
 
-var authorNames = authors.map(authorName);
-var popularAuthors = authors.filter(function (a) {
-  return a.readers > 10000;
-});
-var popularAuthorNames = popularAuthors.map(authorName);
+var shipSensor1 = new Bacon.Bus();
+var shipSensor2 = new Bacon.Bus();
+var shipSensor3 = new Bacon.Bus();
+var destroyerDistanceStream1 = new Bacon.Bus();
+var destroyerDistanceStream2 = new Bacon.Bus();
+var destroyerDistance;
+
+var shipSensorR = new Bacon.Bus();
+var destroyerDistanceStreamR = new Bacon.Bus();
 
 var run = {
-  input: Bacon.sequentially(100, authors),
+  input: [shipSensorR, destroyerDistanceStreamR.toProperty(8)],
   expect: function (streams, ex, assert) {
-    validate(streams.a, authorNames)
-      .and(validate(streams.b, popularAuthors))
-      .and(validate(streams.c, popularAuthorNames))
-      .onValue(assert);
+    var a = streams.ships
+      .fold(0, function (acc, v) { return acc + v; });
+
+    var b = streams.threat.changes()
+      .fold([], '.concat');
+
+    var c = streams.postArrivalShips
+      .fold(0, function (acc, v) { return acc + v; });
+
+    var all = Bacon.zipAsArray(a,b,c)
+      .onValues(function (ships, threat, postArrivalShips) {
+        return assert(ships === 3 && _.isEqual(threat, threats) && postArrivalShips == 2);
+      });
+
+    shipSensorR.push(zrrkShip);
+    destroyerDistanceStreamR.push(8);
+    destroyerDistanceStreamR.push(7);
+    destroyerDistanceStreamR.push(4);
+    destroyerDistanceStreamR.push(2);
+    destroyerDistanceStreamR.push(0.5);
+    destroyerDistanceStreamR.push(0);
+    shipSensorR.push(earthianShip);
+    shipSensorR.push(zrrkShip);
+    shipSensorR.push(zrrkShip);
+    destroyerDistanceStreamR.end();
+    shipSensorR.end();
+
   }
 };
 
-
 var testing = {
-  'Should emit the names of all authors on the form "first, last"': {
-    input: run.input,
+  'Should emit 1s for Zrrk ships': {
+    input: [shipSensor1, destroyerDistanceStream1.toProperty(8)],
     expect: function (streams, ex, assert) {
-      validate(streams.a, authorNames).onValue(assert);
+      streams.ships
+        .fold(0, function (acc, v) { return acc + v; })
+        .onValue(function (v) { return assert(v === 3); });
+
+      shipSensor1.push(zrrkShip);
+      shipSensor1.push(zrrkShip);
+      shipSensor1.push(zrrkShip);
+      shipSensor1.end();
     }
   },
-  'Should all popular authors': {
-    input: run.input,
+  'Should emit 0s for non-Zrrk ships': {
+    input: [shipSensor2, destroyerDistanceStream1.toProperty(8)],
     expect: function (streams, ex, assert) {
-      validate(streams.b, popularAuthors).onValue(assert);
+      streams.ships
+        .fold(0, function (acc, v) { return acc + v; })
+        .onValue(function (v) { return assert(v === 0); });
+
+      shipSensor2.push(earthianShip);
+      shipSensor2.push(purpleShip);
+      shipSensor2.push(martianShip);
+      shipSensor2.end();
     }
   },
-  'Should emit the names of all popular authors on the form "first, last"': {
-    input: run.input,
+  'Should give approperiate threat levels': {
+    input: [shipSensor3, destroyerDistanceStream1.toProperty(8)],
     expect: function (streams, ex, assert) {
-      validate(streams.c, popularAuthorNames).onValue(assert);
+      streams.threat.changes()
+        .fold([], '.concat')
+        .onValue(function (v) { return assert(_.isEqual(v, threats)); });
+
+      destroyerDistanceStream1.push(8);
+      destroyerDistanceStream1.push(7);
+      destroyerDistanceStream1.push(4);
+      destroyerDistanceStream1.push(2);
+      destroyerDistanceStream1.push(0.5);
+      destroyerDistanceStream1.push(0);
+      destroyerDistanceStream1.end();
+    }
+  },
+  'Should emit the approperiate number of Zrrk ships passing after Destroyer has arrived': {
+    input: [shipSensor3, destroyerDistanceStream2.toProperty(8)],
+    expect: function (streams, ex, assert) {
+      streams.postArrivalShips
+        .fold(0, function (acc, v) { return acc + v; })
+        .onValue(function (v) { return assert(v === 2); });
+
+      shipSensor3.push(zrrkShip);
+      destroyerDistanceStream2.push(0.5);
+      shipSensor3.push(earthianShip);
+      shipSensor3.push(zrrkShip);
+      shipSensor3.push(zrrkShip);
+      destroyerDistanceStream2.end();
+      shipSensor3.end();
     }
   }
 };
