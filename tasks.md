@@ -10,18 +10,21 @@
 
 ## Combinators
 
-5. Filter -> Map -> Log based on given event stream as input
-6. Fold/Scan
-7. Merge/Combine
-8. Combination of multiples as templates
+6. Filter -> Map -> Log based on given event stream as input
+7. Fold/Scan
+8. Merge/Combine
+9. Combination of multiples as templates
 
 ## Advanced
 
-9. And/or
-10. Sampling
-11. Throttling/Delays
-12. Flatmaps
-
+10. And/or
+11. Sampling
+12. Throttling/Delays
+13. Flatmaps
 
 ## Beyond
 
+14. Error-handling
+15. Reusable pipelines with doAction
+16. Sliding window and onValues
+17. Awaiting Orders
