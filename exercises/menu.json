@@ -5,8 +5,11 @@
   "4. EventStreams",
   "5. Properties",
   "6. Mapping and Filtering",
-  "9. And or Or or Maybe Not",
-  "10. Sampled",
-  "11. Selective Data and Timing",
-  "12. Flatmaps"
+  "7. Fold and Scan",
+  "8. Crossing Streams",
+  "9. More Crossing Streams",
+  "10. And or Or or Maybe Not",
+  "11. Sampled",
+  "12. Selective Data By Timing",
+  "13. Flatmaps"
 ]
