@@ -1,9 +1,9 @@
 var Bacon = require('baconjs');
 
-module.exports = function (cubicFlow, inCriticalMode, isOnBreak, isRiverFlowing, shouldBother, riverFlowLimit) {
+module.exports = function (riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) {
 
-  var shouldReallyNotify = shouldBother.and(isRiverFlowing).or(inCriticalMode).and(isOnBreak.not()).toProperty();
-  var isTooMuchWater = cubicFlow.map(function (val) {
+  var shouldReallyNotify = systemActive.and(isSingleGate).or(inCriticalMode).and(isOnBreak.not()).toProperty();
+  var isTooMuchWater = riverFlow.map(function (val) {
       return val > riverFlowLimit;
     }).toProperty();
 
