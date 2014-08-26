@@ -24,7 +24,6 @@
 
 ## Beyond
 
-14. Error-handling
-15. Reusable pipelines with doAction
-16. Sliding window and onValues
-17. Awaiting Orders
+14. Field and form validation
+15. Showing spinner
+16. Error handling
