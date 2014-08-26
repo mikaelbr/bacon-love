@@ -1,9 +1,9 @@
 var Bacon = require('baconjs');
 
-module.exports = function (riverWest, riverEast, buttonClicked) {
-  var westWhenButtonClicked = riverWest.sampledBy(buttonClicked);
+module.exports = function (nidelva, leirelva, buttonClicked) {
+  var nidelvaWhenButtonClicked = nidelva.sampledBy(buttonClicked);
 
-  return riverEast.sampledBy(westWhenButtonClicked, function (east, west) {
-    return east + west;
+  return leirelva.sampledBy(nidelvaWhenButtonClicked, function (leirelvaSample, nidelvaSample) {
+    return leirelvaSample + nidelvaSample;
   });
 };
