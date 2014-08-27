@@ -7,7 +7,7 @@ module.exports = function (riverFlowInQubicFeet, litresInQubicFeet) {
 
     var litres = Math.round(qubicFeet * litresInQubicFeet);
 
-    if (litres < 3000) {
+    if (litres < 200000) {
       return Bacon.never();
     }
     return Bacon.interval(100, litres).take(numberOfSamples);
