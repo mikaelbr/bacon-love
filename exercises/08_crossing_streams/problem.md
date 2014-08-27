@@ -1,4 +1,4 @@
-# Crossing Streams
+# Combining Observables, part I
 
 ## Single observable
 - Merge
@@ -24,7 +24,6 @@ The decoder function will take as its single parameter a touple on the form
 `[message, key]`.
 
 ## Template
-
 
 ```js
 // include the Bacon.js library
