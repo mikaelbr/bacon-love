@@ -11,5 +11,8 @@
   "10. And or Or or Maybe Not",
   "11. Sampled",
   "12. Selective Data By Timing",
-  "13. Flatmaps"
+  "13. Flatmaps",
+  "14. Field and Form Validation",
+  "15. Loading Spinner",
+  "16. Error Handling"
 ]
