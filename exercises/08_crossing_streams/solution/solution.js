@@ -1,5 +1,5 @@
-var Bacon = require('baconjs');
-
-module.exports = function () {
-
+module.exports = function (messages, keys, decoderFunction) {
+  return messages
+    .zip(keys)
+    .map(decoderFunction);
 };
