@@ -1,6 +1,42 @@
 # Combining Observables, part II
 
-Talk about combineTemplate
+In the previous exercise we looked primarily on combining pairs of
+Observables. Sometimes however, we want to combine more than two Observables.
+The semantics of the multi-Observable combinators are the same as their
+pairwise counterparts discussed in the previous exercise.
+
+As an illustration:
+
+```js
+var ones = Bacon.interval(100, 1);
+var twos = Bacon.interval(100, 2);
+var threes = Bacon.interval(100, 3);
+
+var result = Bacon.zipAsArray(ones, twos, threes);
+
+/*
+ones:    ---1---1---1---1---1--->
+twos:    ---2---2---2---2---2--->
+threes:  ---3---3---3---3---3--->
+
+         vvv   zipAsArray()   vvv
+
+           [1, [1, [1, [1, [1,
+            2,  2,  2,  2,  2,
+result:  ---3]--3]--3]--3]--3]-->
+*/
+```
+
+One particular interesting multi-Observable combinator is a special case of
+the `combine` method, namely the `Bacon.combineTemplate` function. This
+function is particularely useful when combining multiple Observables into a
+single Property that represent some meaningful grouping of the Observables,
+for instance a Model-object (from MVC). `Bacon.combineTemplate` takes a
+template-object as an argument, which binds Observables to labels in the
+object.
+
+There are many more multi-Observable combinators in the Bacon.js docs
+[here](https://github.com/baconjs/bacon.js/#combining-multiple-streams-and-properties).
 
 ## The Problem
 
@@ -22,7 +58,7 @@ sectors of the solar system.
 var Bacon = require('baconjs');
 
 module.exports = function (sector1Count, sector2Count, sector3Count, sector4Count) {
-  var deploymentReport = void 0;
+  var deploymentReport;
 
   return deploymentReport;
 };
