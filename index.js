@@ -9,7 +9,7 @@ workshopper({
   exerciseDir: join(__dirname, 'exercises'),
   appDir: __dirname,
   menu: {
-    fg: 'white',
+    fg: 'cyan',
     bg: 'black',
   }
 });
