@@ -1,4 +1,4 @@
-# How to do exercises
+# How to do Exercises
 
 This workshop consists of multiple exercises that you have to solve. Each exercise
 will have a problem description and some theoretical information
@@ -21,22 +21,22 @@ it at different points during this workshop.
 
 Let's get started by doing a simple exercise.
 
-## Introductory theory
+## Introductory Theory
 
 In short, Functional Reactive Programming (FRP) is functional programming with
 first class representation for values that vary over time. We can represent
-sequences of any event occuring at indeterminate points in time as a stream.
+sequences of any event occurring at indeterminate points in time as a stream.
 This allows us to do async programming with ease and handle user input or
 output in a simpler manner than we would using more imperative style
 programming.
 
 In classic FRP, which we will be using here, we have two different
-abstractions for data; Properties and EventStreams. Properties are continous
-values and EventStreams are discrete values. There are many ways of
-implementing the central concepts of Functional Reactive Programming, but in
-this workshop we will use [Bacon.js](https://github.com/baconjs/bacon.js).
-We'll take a closer look at Properties and EventStreams in the comming
-exercises.
+abstractions for data; Properties and EventStreams (collectively called
+Observables). Properties are continuous values and EventStreams are discrete
+values. There are many ways of implementing the central concepts of Functional
+Reactive Programming, but in this workshop we will use
+[Bacon.js](https://github.com/baconjs/bacon.js). We'll take a closer look at
+Properties and EventStreams in the coming exercises.
 
 In Bacon.js we can create Properties or EventStreams from sources through a
 series of constructors. The reason we need to construct an instance of a
@@ -44,12 +44,12 @@ Bacon-type is that JavaScript is not naturally reactive (at the moment), so to
 get abstractions that are reactive we must wrap the data sources. For
 instance, mouse clicks can be a source for an EventStream.
 
-## Problem description
+## Problem Description
 
 As mentioned, Bacon.js has different ways of creating reactive datatypes from
 various sources. One method you can use is `sequentially`, which takes an
 interval and an array of values which will create an EventStream that emits
-one value each interval untill all values have been emitted.
+one value each interval until all values have been emitted.
 
 To gain some familiarity with this workshop format, you will create a file
 using the template below. This file will create and return an EventStream with

@@ -10,7 +10,7 @@ reactive part of Functional Reactive Programming.
 Say you have some data represented as a promise and you want to wrap as a
 reactive datatype. Then you could wrap it by using the constructor
 `Bacon.fromPromise(promise)`. The result will be an EventStream that emits an
-event when the promise is resolved and immediatly ended.
+event when the promise is resolved and immediately ended.
 
 You can also wrap EventTargets, or objects that adhere to the same interface,
 as reactive datatypes. EventTargets are typically DOM elements that can
@@ -23,7 +23,7 @@ Bacon.fromEventTarget(document.querySelector('button'), 'click').log();
 ```
 
 This will log the event object emitted each time a button-element is clicked.
-Don't think to much of the `.log()` method just yet, we will cover this and
+Don't think too much of the `.log()` method just yet, we will cover this and
 more in the next exercise.
 
 Refer to [Creating Stream](https://github.com/baconjs/bacon.js#creating-
@@ -31,7 +31,7 @@ streams) for more wrappers and examples of creating reactive datatypes from
 different sources.
 
 
-## The problem
+## Problem Description
 
 In this exercise you will have to create four different reactive datatypes
 based on sources given as input.
@@ -39,15 +39,15 @@ based on sources given as input.
 Inputs are given in the following order:
 
 1. `promise` - A promise that should be wrapped to as a reactive datatype
-2. `eventTarget` - an event emitter object that emits data on a `data` channel.
+2. `eventTarget` - an EventTarget object that emits data on a `data` channel.
 3. `callback` - A callback which when called should give a value on an event stream
 
-In addition to these values, you should create an event source that emits all
+**In addition** to these values, you should create an event source that emits all
 the values in an array. The array should have 4 incremented values starting with `1`.
 (i.e. the sum of all values should be `10`).
 
 In this particular exercise the template used is different than in the rest of the
-exercises. Instead of returning one stream you should return an object literal of
+exercises. Instead of returning only one stream you should return an object literal of
 streams, with the keys as defined in the template below.
 
 ## Template
