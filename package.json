@@ -2,13 +2,31 @@
   "name": "bacon-love",
   "version": "1.0.0",
   "description": "A Nodeschool type workshop for Functional Reactive Programming and Bacon.js",
+  "keywords": [
+    "Workshopper",
+    "Nodeschool",
+    "baconjs",
+    "functional",
+    "reactive",
+    "frp"
+  ],
+  "homepage": "https://github.com/mikaelbr/bacon-love",
+  "issues": "https://github.com/mikaelbr/bacon-love/issues",
   "main": "index.js",
   "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikaelbr/bacon-love.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT",
+   "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "dependencies": {
     "baconjs": "^0.7.22",
     "lodash": "^2.4.1",
