@@ -1,4 +1,4 @@
-# Possible tasks for a FRP workshop
+# Tasks for a FRP workshop
 
 ## Introductory
 
