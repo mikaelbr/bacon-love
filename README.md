@@ -12,7 +12,7 @@ is that Bacon adhere to classic theory of FRP (with a distinction between
 observables).
 
 
-![bacon-love](https://raw.githubusercontent.com/mikaelbr/bacon-love/master/screenshot.png)
+![bacon-love](./screenshot.png)
 
 
 ## Install and Start
