@@ -6,9 +6,7 @@ var _ = require('lodash');
 
 var clicks = new Bacon.Bus();
 var asyncTask = new Bacon.Bus();
-var callCount = 0;
 var startAsyncTask = function () {
-  callCount++;
   return asyncTask;
 };
 
@@ -21,12 +19,9 @@ function invert(fun) {
 var run = {
   input: [clicks, startAsyncTask],
   expect: function (streams, ex, assert) {
-    callCount = 0;
     var unsub = streams
       .sampledBy(clicks.skip(1))
-      .onValue(function (v) {
-        return assert(callCount === 1 && v);
-      });
+      .onValue(assert);
 
     clicks.push(1);
     clicks.push(2);
@@ -38,7 +33,6 @@ var testing = {
   'Should not display spinner while idle': {
     input: run.input,
     expect: function (streams, ex, assert) {
-      callCount = 0;
       var unsub = streams
         .onValue(invert(assert));
       unsub();
@@ -49,7 +43,7 @@ var testing = {
     expect: function (streams, ex, assert) {
       var unsub = streams
         .sampledBy(clicks)
-        .onValue(invert(assert));
+        .onValue(assert);
 
       clicks.push(1);
       unsub();
@@ -58,7 +52,6 @@ var testing = {
   'Should not display spinner when task has returned': {
     input: run.input,
     expect: function (streams, ex, assert) {
-      callCount = 0;
       var unsub = streams
         .sampledBy(asyncTask)
         .onValue(invert(assert));
@@ -71,28 +64,12 @@ var testing = {
   'Should display spinner when first task has returned while waiting for second task': {
     input: run.input,
     expect: function (streams, ex, assert) {
-      callCount = 0;
       var unsub = streams
         .sampledBy(clicks.skip(1))
         .onValue(assert);
 
       clicks.push(1);
       asyncTask.push(1);
-      clicks.push(1);
-      unsub();
-    }
-  },
-  'Should not start multiple async tasks while waiting for result of async task': {
-    input: run.input,
-    expect: function (streams, ex, assert) {
-      callCount = 0;
-      var unsub = streams
-        .sampledBy(clicks.skip(1))
-        .onValue(function (v) {
-          return assert(v && callCount === 1);
-        });
-
-      clicks.push(1);
       clicks.push(1);
       unsub();
     }

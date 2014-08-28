@@ -1,14 +1,8 @@
-var Bacon = require('baconjs');
-
-//TODO: Unfinished
 module.exports = function (clicks, startAsyncTask) {
-  var hasClicked = clicks.skip(1).map(Boolean).toProperty(false);
+  var request = clicks.map(true);
+  var response = request.flatMap(startAsyncTask);
 
-  var taskResult = clicks.filter(hasClicked.not()).flatMap(function () {
-    return startAsyncTask();
-  });
+  var pending = request.merge(response.map(false)).toProperty(false);
 
-  var hasReturned = taskResult.map(Boolean).toProperty(false);
-
-  return hasClicked.and(hasReturned.not());
+  return pending;
 };
