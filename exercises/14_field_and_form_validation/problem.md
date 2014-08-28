@@ -4,20 +4,20 @@ This is the beginning of the more open part of the workshop. Here we will take
 a look at common scenarios in client-side programming. First one up is forms and
 field validation.
 
-One of the nice things about FRP is that the "network" you construct by
+One of the nice things about FRP is that the "graph" you construct by
 transforming and combining Observables is side-effect free, which makes it
 very easy to just plug into various configurations of sources and subscribers.
 
 If we take this exercise as an example. In order to use the logic you build
 for this hypothetical form validator in an actual form you would need to
-connect the sources to the network and bind the leafs of the network to
+connect the sources to the graph and bind the leafs of the graph to
 subscribers. More specifically you would need to create EventStreams for all
 the input-fields and bind the leafs to some DOM-elements to indicate to the
 user the validity.
 
 This is where the goal of functional programming to reduce shared mutable
 state as much as possible really comes into its own right. Since we have
-limited the mutation of the DOM to only the edges of the network we can reason
+limited the mutation of the DOM to only the edges of the graph we can reason
 about the logic separately from the DOM.
 
 ## Problem Description
