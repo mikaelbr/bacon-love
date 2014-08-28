@@ -8,6 +8,7 @@ a look at the `functional-javascript-workshop` workshopper). `map` and
 Collections.
 
 An example of how map would work on a stream of clicks from a button:
+
 ```js
 var clicks = Bacon.fromEventTarget(document.querySelector('button'), 'clicks');
 var ones = clicks.map(function (c) { return 1; });
@@ -33,6 +34,7 @@ it an important distinction from `map` which will emit a value each time the
 source emits a value.
 
 To illustrate:
+
 ```js
 var values = Bacon.fromEventTarget(document.querySelector('input'), 'keyup');
 var highValues = clicks.filter(function (v) { return v > 10; });
@@ -72,6 +74,7 @@ Zrrk Planet Destroyer.
 passes the sensor, but only after we have achieved extreme threat.
 
 Ships entering the solar system will have this information:
+
 ```json
 {
   "type": "zrrk|earthian|purple|martian"

@@ -10,6 +10,7 @@ This is why there is also something called `scan`. Scan is the lazy counterpart 
 
 Expanding on the `map` example with the clickStream from the previous
 exercise, we can illustrate how a `scan` works:
+
 ```js
 var clickStream = Bacon.fromEventTarget(document.querySelector('button'), 'clicks');
 var oneStream = clicks.map(function (c) { return 1; });
@@ -56,6 +57,7 @@ immediatly after the Zrrk Planet Destroyer. You will know when the Destroyer
 has arrived when the position is `<1`.
 
 The format of the report should match this:
+
 ```json
 {
   "typeA": 1,
