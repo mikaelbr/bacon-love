@@ -36,17 +36,17 @@ This will create an EventStream, that has one value before it ends.
 
 ## From Properties to EventStreams
 
-When you have a property, you some times would want to make it an EventStream.
-For instance, you can have a property representing the text in an input (which
+When you have a Property, you some times would want to make it an EventStream.
+For instance, you can have a Property representing the text in an input (which
 is continuous), and want to make it to an EventStream with the text everytime
 it changes (discrete).
 
-One way of converting to an EventStream is by doing `.sample(interval)` where
-you can poll the EventStream by a given interval, creating an EventStream with
+One way of converting to an EventStream is by doing `property.sample(interval)` where
+you can poll the source Property by a given interval, creating an EventStream with
 the values at the given time.
 
 Another way is by doing `.changes()`, which creates an EventStream with values
-from the changes of a property. The `.changes()` method does not include the
+from the changes of a Property. The `.changes()` method does not include the
 value at the given time in the created EventStream. Alternative method
 `.toEventStream()` behaves the same way as `.changes()`, but includes the
 current value.
