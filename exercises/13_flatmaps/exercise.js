@@ -3,13 +3,13 @@
 var Bacon = require('baconjs');
 var verify = require("../../verify.js");
 
-var litresInQubicFeet = 28.3168;
+var litresInCubicFeet = 28.3168;
 
 var run = {
 
   input: [
     Bacon.sequentially(10, [[8000, 5], [6000, 10], [7100, 2]]),
-    litresInQubicFeet
+    litresInCubicFeet
   ],
 
   expect: function (stream, exercise, assert) {
@@ -40,7 +40,7 @@ var testing = {
 
     input: [
     Bacon.sequentially(10, [[6000, 5], [6000, 10], [4000, 2]]),
-      litresInQubicFeet
+      litresInCubicFeet
     ],
 
     expect: function (stream, exercise, assert) {
@@ -62,7 +62,7 @@ var testing = {
 
     input: [
     Bacon.sequentially(10, [[8000, 5], [6000, 10], [7100, 2]]),
-      litresInQubicFeet
+      litresInCubicFeet
     ],
 
     expect: function (stream, exercise, assert) {

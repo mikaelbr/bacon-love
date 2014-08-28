@@ -1,10 +1,10 @@
 # Loading Spinner
 
 Showing a spinner while performing some async task is a very common pattern in
-clientside programming. In this exercise we will look at how this can be
+client-side programming. In this exercise we will look at how this can be
 solved by FRP.
 
-## The Problem
+## Problem Description
 
 Your task will be to create an observable which holds the current visibility
 of a spinner. You will be supplied with one observable which is a stream of

@@ -1,11 +1,11 @@
 var Bacon = require('baconjs');
 
-module.exports = function (riverFlowInQubicFeet, litresInQubicFeet) {
-  return riverFlowInQubicFeet.flatMap(function(flowData) {
-    var qubicFeet = flowData[0];
+module.exports = function (riverFlowInCubicFeet, litresInCubicFeet) {
+  return riverFlowInCubicFeet.flatMap(function(flowData) {
+    var cubicFeet = flowData[0];
     var numberOfSamples = flowData[1];
 
-    var litres = Math.round(qubicFeet * litresInQubicFeet);
+    var litres = Math.round(cubicFeet * litresInCubicFeet);
 
     if (litres < 200000) {
       return Bacon.never();

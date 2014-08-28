@@ -1,7 +1,7 @@
 # Combining Observables, part I
 
 If you felt that map-filter-fold was powerful, wait until you see combining!
-We have already touched sligthly on combining Observables in the previous
+We have already touched slightly on combining Observables in the previous
 exercises by using a Property as the predicate for `filter` and `takeWhile`
 methods. But there are more powerful tools available here.
 
@@ -73,7 +73,7 @@ abs: -------[a,b]---[a,b]---->
 */
 ```
 
-## The Problem
+## Problem Description
 
 The Earthian Defence Force has been able to obtain a decoding-machine that can
 translate commands from the Zrrk command. This machine does however require
@@ -84,8 +84,8 @@ in a synchronized fashion.
 Your job will be to combine these two streams with the decoder function and
 produce a stream of invaluable intel for the EDF.
 
-The decoder function will take as its single parameter a touple on the form
-`[message, key]`.
+The decoder function, passed as the third argument, will take as its single
+parameter a tuple on the form `[message, key]`.
 
 ## Template
 

@@ -1,19 +1,21 @@
 # Report if The River Nidelva is Overflowing
 
-As we know, Properties ar continous values, and as such we can
+As we know, Properties are continuous values, and as they almost
+always have a value (i.e. remembers their previous value) we can
 do operations on them that looks more like normal synchronous
 imperative operations; like conditional and/or and negating a
 boolean value.
 
 We can do something like `myProperty.and(anotherProperty)`, and
-have the resulting property be true if and only if both `myProperty`
-and `anotherProperty` holds a value that is true. The same way we
-can use `myProperty.or(anotherProperty)` to create a property
-that holds true if one of the given properties holds true.
+have the resulting property be `true` if and only if both `myProperty`
+and `anotherProperty` holds a value that is `true`. The same holds
+true for `myProperty.or(anotherProperty)` as well, where we create a
+property that holds `true` if one of the given properties holds `true`.
 
-The negation method `.not()`, can also be used on EventStreams, as
-it just negates a boolean from the value set. In essense, the `.not()`
-method is just a short-hand for mapping to the inverted value:
+The negation method `.not()`, can also be used on both EventStreams,
+and Properties, as it just negates a boolean from the value set. In
+essence, the `.not()` method is just a short-hand for mapping to the
+inverted value:
 
 ```javascript
 myObservable.map(function (val) {
@@ -25,7 +27,7 @@ In this exercise we will see more on how to use conditional operations
 with properties.
 
 
-# The Exercise Problem
+# Problem Description
 
 In Trondheim, Norway, there is a river called Nidelva. The average flow
 in some areas of Nidelva is about 200 000 liters per second. Let's say
@@ -34,7 +36,7 @@ we need a report system that notifies the workers if this limit is reached.
 
 We are only interested in having the report-system active if it is turned
 on and only one of the water gates are open, or if the system is in critical
-mode (this trumphs if the system is active and if more than one gate is open).
+mode (this trumps if the system is active and if more than one gate is open).
 
 The people working as this particular dam is passionate about lunch, and
 won't be bothered in the lunch time.
@@ -65,4 +67,3 @@ module.exports = function (riverFlow, inCriticalMode, isOnBreak, isSingleGate, s
   return resultingProperty;
 };
 ```
-

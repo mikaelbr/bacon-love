@@ -29,9 +29,9 @@ var property = Bacon.fromEventTarget(document.querySelector('input'), 'keyup')
       .toProperty('Default string');
 ```
 
-**Note:** Don't worry about the `map` method right now. We will see how this
-works in the next exercise. All you need to know for now is that i transforms
-the EventStream from being a set of event objects to a stream of values.
+**Note:** The `map` method here works in the same way as it would on a collection
+in other functional programming libraries. We'll see more on `map` in the next
+exercise.
 
 ## Problem Description
 

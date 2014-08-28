@@ -29,7 +29,7 @@ result:  ---3]--3]--3]--3]--3]-->
 
 One particular interesting multi-Observable combinator is a special case of
 the `combine` method, namely the `Bacon.combineTemplate` function. This
-function is particularely useful when combining multiple Observables into a
+function is particularly useful when combining multiple Observables into a
 single Property that represent some meaningful grouping of the Observables,
 for instance a Model-object (from MVC). `Bacon.combineTemplate` takes a
 template-object as an argument, which binds Observables to labels in the
@@ -38,9 +38,9 @@ object.
 There are many more multi-Observable combinators in the Bacon.js docs
 [here](https://github.com/baconjs/bacon.js/#combining-multiple-streams-and-properties).
 
-## The Problem
+## Problem Description
 
-Thanks to the intel you have provided throughout the defence campain against
+Thanks to the intel you have provided throughout the defence campaign against
 the Zrrk invasion, the Earthian Defence Force has concluded that the Zrrk come
 in peace. The EDF have decided that in order to show signs of good will
 towards the apparently friendly Zrrk to broadcast the withdrawal status of the

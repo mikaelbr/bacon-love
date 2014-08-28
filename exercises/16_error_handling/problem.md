@@ -1,6 +1,6 @@
 # Error Handling
 
-Handling error-cases when doing clientside programming is something we do all
+Handling error-cases when doing client-side programming is something we do all
 the time. If the server is offline when we try to communicate with it or when
 sending an invalid request.
 
@@ -17,7 +17,7 @@ source stream will also pass through flatMaps. The reason for this is to not
 loose errors on in the network and to be able to handle errors on the edges
 instead.
 
-## The Problem
+## Problem Description
 
 Given an observable representing the result of an async task that can error
 you should return an observable representing the presence of an error. This

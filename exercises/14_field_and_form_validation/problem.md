@@ -1,7 +1,7 @@
 # Form and Field Validation
 
 This is the beginning of the more open part of the workshop. Here we will take
-a look at common scenarios in clientside programming. First one up is form and
+a look at common scenarios in client-side programming. First one up is forms and
 field validation.
 
 One of the nice things about FRP is that the "network" you construct by
@@ -13,21 +13,21 @@ for this hypothetical form validator in an actual form you would need to
 connect the sources to the network and bind the leafs of the network to
 subscribers. More specifically you would need to create EventStreams for all
 the input-fields and bind the leafs to some DOM-elements to indicate to the
-user the validitiy.
+user the validity.
 
 This is where the goal of functional programming to reduce shared mutable
 state as much as possible really comes into its own right. Since we have
 limited the mutation of the DOM to only the edges of the network we can reason
 about the logic separately from the DOM.
 
-## The Problem
+## Problem Description
 
 You will be supplied with streams of two different input-fields, each with
-their own validation function which takes a value as input and returns wether
+their own validation function which takes a value as input and returns whether
 the value is valid or not.
 
-What you should return is three observables which indicate wether the value
-observed is valid or not and an observable which indicates wether the field as
+What you should return is three observables which indicate whether the value
+observed is valid or not and an observable which indicates whether the field as
 a whole is valid.
 
 Field A and C is required. Field B is optional, but if it has a value it must

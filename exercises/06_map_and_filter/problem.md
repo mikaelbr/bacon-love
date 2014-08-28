@@ -10,7 +10,7 @@ Collections.
 An example of how map would work on a stream of clicks from a button:
 
 ```js
-var clicks = Bacon.fromEventTarget(document.querySelector('button'), 'clicks');
+var clicks = Bacon.fromEventTarget(document.querySelector('button'), 'click');
 var ones = clicks.map(function (c) { return 1; });
 
 /*
@@ -22,14 +22,14 @@ var ones = clicks.map(function (c) { return 1; });
 */
 ```
 
-This is also where immutablitiy comes into play again. When mapping or
+This is also where immutability comes into play. When mapping or
 filtering an Observable you will get a whole new Observable instead of
 modifying the source Observable. This goes for all the combinators in Bacon.js
-aswell. The new Observable will emit the transformed value each time the
+as well. The new Observable will emit the transformed value each time the
 source Observable emits a value.
 
 `filter` also transforms the values, but instead of giving them a new value it
-will decide wether the value should be emitted or skipped entirely. This gives
+will decide whether the value should be emitted or skipped entirely. This gives
 it an important distinction from `map` which will emit a value each time the
 source emits a value.
 
@@ -37,7 +37,7 @@ To illustrate:
 
 ```js
 var values = Bacon.fromEventTarget(document.querySelector('input'), 'keyup');
-var highValues = clicks.filter(function (v) { return v > 10; });
+var highValues = clicks.filter(function (e) { return e.keyCode > 10; });
 
 /*
   valueStream: --4----11--3----12------15-->
@@ -48,19 +48,20 @@ var highValues = clicks.filter(function (v) { return v > 10; });
 */
 ```
 
-## The problem
+## Problem Description
 
 The year is 3001 and the planet Earth is under attack by the Zrrks of planet
-Omicron Persei 7. In order to help the Earthian Defence Force you have been
+Omicron Persei 6. In order to help the Earthian Defence Force you have been
 tasked with the gathering of intelligence on the incoming Zrrk invasion. The
 EDF has provided you with two key sensors which gives constant readings on
 critical metrics of the invading Zrrk force:
 
 - A sensor which registers all ships that enter our solar system.
 - A sensor which at any time registers the position of the Zrrk Planet
-Destroyer in lightyears.
+Destroyer in light-years.
 
-Your assignment is to provide three key strategical pieces of information:
+Your mission, should you choose to accept it, is to provide three key
+strategical pieces of information:
 
 - A stream which emits a 1 for Zrrk ships and a 0 for all other ships which
 passes the sensor.
@@ -96,3 +97,5 @@ module.exports = function (enteringShips, destroyerPosition) {
   };
 };
 ```
+
+> This message will not self-destruct in 5 seconds.
