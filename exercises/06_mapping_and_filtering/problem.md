@@ -1,6 +1,50 @@
-# Mapping and filtering over Observables
+# Map and Filter with Observables
 
-TODO: Theory
+Being able to easily transform the values in observables is what makes FRP
+such a powerful tool. You are probably already familiar with the map and
+filter combinators from functional programming (if not, I would suggest taking
+a look at the `functional-javascript-workshop` workshopper). `map` and
+`filter` works pretty much the same way on Observables as they do on
+Collections.
+
+An example of how map would work on a stream of clicks from a button:
+```js
+var clicks = Bacon.fromEventTarget(document.querySelector('button'), 'clicks');
+var ones = clicks.map(function (c) { return 1; });
+
+/*
+  clickStream: ---c----c--c----c------c-->
+
+               vvvv    map(c => 1)    vvvv
+
+  oneStream:   ---1----1--1----1------1-->
+*/
+```
+
+This is also where immutablitiy comes into play again. When mapping or
+filtering an Observable you will get a whole new Observable instead of
+modifying the source Observable. This goes for all the combinators in Bacon.js
+aswell. The new Observable will emit the transformed value each time the
+source Observable emits a value.
+
+`filter` also transforms the values, but instead of giving them a new value it
+will decide wether the value should be emitted or skipped entirely. This gives
+it an important distinction from `map` which will emit a value each time the
+source emits a value.
+
+To illustrate:
+```js
+var values = Bacon.fromEventTarget(document.querySelector('input'), 'keyup');
+var highValues = clicks.filter(function (v) { return v > 10; });
+
+/*
+  valueStream: --4----11--3----12------15-->
+
+               vvv  filter(v => v > 10)  vvv
+
+  highValues:  -------11-------12------15-->
+*/
+```
 
 ## The problem
 
