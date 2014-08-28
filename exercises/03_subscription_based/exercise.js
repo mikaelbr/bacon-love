@@ -61,7 +61,7 @@ var options = {
 
 
 var testing = {
-    'Some descriptive text defining what this test does': {
+    'Checking for proper subscribers and taps': {
         input: run.input,
         expect: run.expect
     }

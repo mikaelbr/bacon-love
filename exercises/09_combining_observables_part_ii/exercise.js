@@ -34,7 +34,7 @@ var run = {
 };
 
 var testing = {
-  'Should the updated count for sector1': {
+  'Should have the updated count for sector1': {
     input: [sector1.toProperty(10), sector2.toProperty(10), sector3.toProperty(10), sector4.toProperty(10)],
     expect: function (streams, ex, assert) {
       var count = 4;
@@ -47,7 +47,7 @@ var testing = {
       unsub();
     }
   },
-  'Should the updated count for sector2': {
+  'Should have the updated count for sector2': {
     input: [sector1.toProperty(10), sector2.toProperty(10), sector3.toProperty(10), sector4.toProperty(10)],
     expect: function (streams, ex, assert) {
       var count = 4;
@@ -60,7 +60,7 @@ var testing = {
       unsub();
     }
   },
-  'Should the updated count for sector3': {
+  'Should have the updated count for sector3': {
     input: [sector1.toProperty(10), sector2.toProperty(10), sector3.toProperty(10), sector4.toProperty(10)],
     expect: function (streams, ex, assert) {
       var count = 4;
@@ -73,7 +73,7 @@ var testing = {
       unsub();
     }
   },
-  'Should the updated count for sector4': {
+  'Should have the updated count for sector4': {
     input: [sector1.toProperty(10), sector2.toProperty(10), sector3.toProperty(10), sector4.toProperty(10)],
     expect: function (streams, ex, assert) {
       var count = 4;
@@ -86,7 +86,7 @@ var testing = {
       unsub();
     }
   },
-  'Should the updated count for sector5': {
+  'Should have the updated count for sector5': {
     input: [sector1.toProperty(10), sector2.toProperty(10), sector3.toProperty(10), sector4.toProperty(10)],
     expect: function (streams, ex, assert) {
       var unsub = streams

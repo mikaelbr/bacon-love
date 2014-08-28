@@ -26,7 +26,7 @@ var run = {
 
 
 var testing = {
-    'Some descriptive text defining what this test does': {
+    'Should return a created EventSream': {
         input: run.input,
         expect: run.expect
     }

@@ -28,7 +28,7 @@ var run = {
 
 
 var testing = {
-    'Some descriptive text defining what this test does': {
+    'Should return a Property': {
         input: run.input,
         expect: run.expect
     }
