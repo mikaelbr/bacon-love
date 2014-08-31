@@ -8,11 +8,11 @@ var run = {
 
   expect: function (streams, exercise, assert) {
     var expectedValue = 10 + 11 + 12 + 13;
-    var isProperty = streams instanceof Bacon.Property;
+    // var isProperty = streams instanceof Bacon.Property;
 
-    if (!isProperty) {
-      exercise.emit('fail', 'Returned value has to be a property.')
-    }
+    // if (!isProperty) {
+    //   exercise.emit('fail', 'Returned value has to be a property.')
+    // }
 
     streams.fold(0, function (a,b) {
       return a + b;

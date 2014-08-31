@@ -7,12 +7,12 @@ var run = {
   input: [],
 
   expect: function (streams, exercise, assert) {
-    var isEventStream = streams instanceof Bacon.EventStream;
+    // var isEventStream = streams instanceof Bacon.EventStream;
     var expectedString = 'Baconisdelicious';
 
-    if (!isEventStream) {
-      exercise.emit('fail', 'Returned value has to be an EventStream.')
-    }
+    // if (!isEventStream) {
+    //   exercise.emit('fail', 'Returned value has to be an EventStream.')
+    // }
 
     streams.fold('', '.concat').onValue(function (str) {
       if (str !== expectedString) {

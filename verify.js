@@ -90,7 +90,8 @@ module.exports = function (tests, testRun, options) {
 };
 
 function isBaconInstance (obj) {
-  return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
+  return true;
+  // return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
 }
 
 function guaranteeArray (input) {
