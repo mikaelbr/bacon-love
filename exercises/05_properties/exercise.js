@@ -21,7 +21,7 @@ var run = {
         exercise.emit('fail', 'The sum of all values do not give the correct result.')
       }
 
-      assert(val === expectedValue && isProperty);
+      assert(val === expectedValue);
     });
   }
 };
