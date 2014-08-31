@@ -6,20 +6,20 @@ var verify = require('../../verify');
 var run = {
   input: [],
 
-  expect: function (streams, exercise, assert) {
-    // var isEventStream = streams instanceof Bacon.EventStream;
+  expect: function (stream, exercise, assert) {
+    var isEventStream = !!stream.onValue && !!stream.toProperty;
     var expectedString = 'Baconisdelicious';
 
-    // if (!isEventStream) {
-    //   exercise.emit('fail', 'Returned value has to be an EventStream.')
-    // }
+    if (!isEventStream) {
+      exercise.emit('fail', 'Returned value has to be an EventStream.')
+    }
 
-    streams.fold('', '.concat').onValue(function (str) {
+    stream.fold('', '.concat').onValue(function (str) {
       if (str !== expectedString) {
         exercise.emit('fail', 'You need to admit that Baconisdelicious.')
       }
 
-      assert(str === expectedString);
+      assert(str === expectedString && isEventStream);
     });
   }
 };

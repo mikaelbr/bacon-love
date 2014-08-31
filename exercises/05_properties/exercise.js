@@ -6,22 +6,22 @@ var verify = require('../../verify');
 var run = {
   input: void 0,
 
-  expect: function (streams, exercise, assert) {
+  expect: function (stream, exercise, assert) {
     var expectedValue = 10 + 11 + 12 + 13;
-    // var isProperty = streams instanceof Bacon.Property;
+    var isProperty = !!stream.onValue && !stream.toProperty;
 
-    // if (!isProperty) {
-    //   exercise.emit('fail', 'Returned value has to be a property.')
-    // }
+    if (!isProperty) {
+      exercise.emit('fail', 'Returned value has to be a property.')
+    }
 
-    streams.fold(0, function (a,b) {
+    stream.fold(0, function (a,b) {
       return a + b;
     }).onValue(function (val) {
       if (val !== expectedValue) {
         exercise.emit('fail', 'The sum of all values do not give the correct result.')
       }
 
-      assert(val === expectedValue);
+      assert(val === expectedValue && isProperty);
     });
   }
 };

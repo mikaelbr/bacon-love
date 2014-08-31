@@ -61,8 +61,7 @@ var testing = {
       ],
 
       expect: function (stream, exercise, assert) {
-        // assert(stream instanceof Bacon.EventStream);
-        assert(true);
+        assert(!!stream.onValue && !!stream.toProperty);
       }
     }
 };

@@ -8,7 +8,7 @@ var exerciser = require('workshopper-exercise');
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 
-var isFirstItemBaconInstance = _.compose(isBaconInstance, _.sample);
+var isFirstItemBaconInstance = _.compose(isProbablyBaconInstance, _.sample);
 
 module.exports = function (tests, testRun, options) {
   var exercise = _.compose(execute, filecheck)(exerciser());
@@ -69,7 +69,7 @@ module.exports = function (tests, testRun, options) {
       stream = usersolution.apply(usersolution, guaranteeArray(test.input));
     // } catch (e) { }
 
-    if (!isBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
+    if (!isProbablyBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {
       exercise.emit('fail', 'The exported function should always return an event stream or property (or a collection of them for ex2.).');
       return false;
     }
@@ -89,9 +89,8 @@ module.exports = function (tests, testRun, options) {
   }
 };
 
-function isBaconInstance (obj) {
-  return true;
-  // return obj instanceof Bacon.Property || obj instanceof Bacon.EventStream;
+function isProbablyBaconInstance (obj) {
+  return !!obj.onValue && !!obj.log;
 }
 
 function guaranteeArray (input) {
