@@ -1,6 +1,6 @@
 {
   "name": "bacon-love",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Nodeschool type workshop for Functional Reactive Programming and Bacon.js",
   "keywords": [
     "Workshopper",
