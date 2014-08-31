@@ -14,7 +14,7 @@ we can get buffered values that is emitted during the delay period.
 There are different ways of doing debounce and throttle: You can
 buffer up all values distributing them over time by doing
 `.bufferingThrottle()`, where you can define a minimum wait time
-between the values, or you can do `.debounceImmidiate()` which gives
+between the values, or you can do `.debounceImmediate()` which gives
 the first observable value and does not wait the initial delay (as
 with normal debouncing).
 
