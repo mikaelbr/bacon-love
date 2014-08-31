@@ -19,7 +19,7 @@ var run = {
         exercise.emit('fail', 'You need to admit that Baconisdelicious.')
       }
 
-      assert(str === expectedString && isEventStream);
+      assert(str === expectedString);
     });
   }
 };
