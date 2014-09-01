@@ -1,7 +1,5 @@
-var Bacon = require('baconjs');
-
 // Export method taking in the correct arguments.
-module.exports = function () {
+module.exports = function (Bacon) {
   var bus = new Bacon.Bus();
   setTimeout(function () {
     bus.push('Bacon');

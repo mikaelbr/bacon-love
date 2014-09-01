@@ -1,7 +1,4 @@
-var Bacon = require('baconjs');
-
-module.exports = function (riverQuality, untilSwitchTurnedOff, sampleTime) {
-
+module.exports = function (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) {
   return riverQuality
               .debounceImmediate(sampleTime)
               .takeWhile(untilSwitchTurnedOff);

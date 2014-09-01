@@ -67,10 +67,7 @@ should be included in your resulting stream.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (riverQuality, untilSwitchTurnedOff, sampleTime) {
+module.exports = function (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) {
   /**
    * Your code here
    **/

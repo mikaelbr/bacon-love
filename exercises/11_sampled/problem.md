@@ -65,10 +65,7 @@ An EventStream of the water level samples.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (nidelva, leirelva, buttonClicked) {
+module.exports = function (Bacon, nidelva, leirelva, buttonClicked) {
   /**
    * Your code here
    **/

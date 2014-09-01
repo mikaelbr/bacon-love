@@ -86,10 +86,7 @@ Ships entering the solar system will have this information:
 
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (enteringShips, destroyerPosition) {
+module.exports = function (Bacon, enteringShips, destroyerPosition) {
   return {
     ships: void 0, // Your ship counter goes here
     threat: void 0, // Your threat level goes here

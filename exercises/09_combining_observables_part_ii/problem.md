@@ -54,10 +54,7 @@ sectors of the solar system.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (sector1Count, sector2Count, sector3Count, sector4Count) {
+module.exports = function (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) {
   var deploymentReport;
 
   return deploymentReport;

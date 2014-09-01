@@ -1,5 +1,3 @@
-var Bacon = require('baconjs');
-
-module.exports = function (asyncTask) {
+module.exports = function (Bacon, asyncTask) {
   return asyncTask.map(false).mapError(true).toProperty(false);
 };

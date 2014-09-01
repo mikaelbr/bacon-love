@@ -1,7 +1,5 @@
-var Bacon = require('baconjs');
-
 // Export method taking in the correct arguments.
-module.exports = function (promise, eventTarget, callback) {
+module.exports = function (Bacon, promise, eventTarget, callback) {
   return {
     // When the promise is resolved a value is sent through the event stream
     // created from Bacon.fromPromise

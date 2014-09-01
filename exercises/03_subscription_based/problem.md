@@ -41,10 +41,7 @@ but the original stream.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-var streamGenerator = function(stream, action, actionOnValue) {
+var streamGenerator = function(Bacon, stream, action, actionOnValue) {
   /**
    * Your code
    */

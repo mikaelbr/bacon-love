@@ -1,6 +1,4 @@
-var Bacon = require('baconjs');
-
-module.exports = function (enteringShips, destroyerPosition) {
+module.exports = function (Bacon, enteringShips, destroyerPosition) {
   var shipTally = enteringShips
     .filter(function (ship) {
       return ship.type === 'zrrk';

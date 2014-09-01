@@ -69,11 +69,8 @@ to do the timing of the data.
 
 Return created stream
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
 // Export method as a module.
-module.exports = function () {
+module.exports = function (Bacon) {
   /**
    * Your code here
    **/

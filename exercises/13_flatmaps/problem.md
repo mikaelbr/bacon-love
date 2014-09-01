@@ -116,10 +116,7 @@ is below the average water level in Nidelva (`200 000` liters).
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (riverFlowInCubicFeet, litresInCubicFeet) {
+module.exports = function (Bacon, riverFlowInCubicFeet, litresInCubicFeet) {
   /**
    * Your code here
    **/

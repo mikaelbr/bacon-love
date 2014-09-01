@@ -17,10 +17,7 @@ waiting for the result of an async operation.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (clicks, startAsyncTask) {
+module.exports = function (Bacon, clicks, startAsyncTask) {
   var spinnerVisibility;
 
   return spinnerVisibility;

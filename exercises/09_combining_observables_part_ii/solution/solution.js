@@ -1,6 +1,6 @@
 var Bacon = require('baconjs');
 
-module.exports = function (sector1Count, sector2Count, sector3Count, sector4Count) {
+module.exports = function (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) {
   return Bacon.combineTemplate({
     sector1: sector1Count,
     sector2: sector2Count,

@@ -1,6 +1,4 @@
-var Bacon = require('baconjs');
-
-module.exports = function (enteringShips, destroyerPosition) {
+module.exports = function (Bacon, enteringShips, destroyerPosition) {
   function shipMapper(ship) { return ship.type === 'zrrk' ? 1 : 0; }
 
   var threat = destroyerPosition.map(function (pos) {

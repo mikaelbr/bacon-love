@@ -60,16 +60,16 @@ values that sum up to `6`. The interval isn't important.
 With a few exceptions the template to use for all exercises will be the following:
 
 ```javascript
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-var streamGenerator = function(input1, input2 /* , ..., inputN */ ) {
+var streamGenerator = function(Bacon, input1, input2 /* , ..., inputN */ ) {
   // return resulting stream
 };
 
 // expose the stream generator as a module method
 module.exports = streamGenerator;
 ```
+
+**First input will always be the Bacon library. Not all exercises will require the
+Bacon object passed as argument, but it is still included.**
 
 Inputs may vary in different exercises and sometimes the output can as well. Templates
 are shown in each problem. For this exact exercise you'll have no inputs, you only

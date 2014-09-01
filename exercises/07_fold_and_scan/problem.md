@@ -77,10 +77,7 @@ The sensors are the same as the previous exercise.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (enteringShips, destroyerPosition) {
+module.exports = function (Bacon, enteringShips, destroyerPosition) {
   /**
    * Your code here
    */

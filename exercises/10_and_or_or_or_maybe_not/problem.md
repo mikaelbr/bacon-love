@@ -57,10 +57,7 @@ if the report system should be triggered.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) {
+module.exports = function (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) {
   /**
    * Your code here
    **/

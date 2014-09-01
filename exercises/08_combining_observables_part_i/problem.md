@@ -90,10 +90,7 @@ parameter a tuple on the form `[message, key]`.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (messages, keys, decoderFunction) {
+module.exports = function (Bacon, messages, keys, decoderFunction) {
   var streamOfDecodedMessages;
 
   return streamOfDecodedMessages;

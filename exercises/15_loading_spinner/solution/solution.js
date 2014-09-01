@@ -1,4 +1,4 @@
-module.exports = function (clicks, startAsyncTask) {
+module.exports = function (Bacon, clicks, startAsyncTask) {
   var request = clicks.map(true);
   var response = request.flatMap(startAsyncTask);
 

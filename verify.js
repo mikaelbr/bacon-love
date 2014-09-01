@@ -66,7 +66,7 @@ module.exports = function (tests, testRun, options) {
     testTitle = testTitle || 'Simulated testrun';
 
     // try {
-      stream = usersolution.apply(usersolution, guaranteeArray(test.input));
+      stream = usersolution.apply(usersolution, [Bacon].concat(guaranteeArray(test.input)));
     // } catch (e) { }
 
     if (!isProbablyBaconInstance(stream) && !isFirstItemBaconInstance(stream)) {

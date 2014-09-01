@@ -53,10 +53,7 @@ streams, with the keys as defined in the template below.
 ## Template
 
 ```javascript
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-var streamGenerator = function (promise, eventTarget, callback) {
+var streamGenerator = function (Bacon, promise, eventTarget, callback) {
   return {
     promise: void 0, // return your promise implementation here
     eventTarget: void 0, // return your eventTarget implementation here

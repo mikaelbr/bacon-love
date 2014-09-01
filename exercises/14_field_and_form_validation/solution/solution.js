@@ -1,6 +1,4 @@
-var Bacon = require('baconjs');
-
-module.exports = function (fieldA, validationA, fieldB, validationB, fieldC, validationC) {
+module.exports = function (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) {
   var a = fieldA.map(validationA).toProperty(false);
   var b = fieldB.filter(Boolean).map(validationB).toProperty(true);
   var c = fieldC.map(validationC).toProperty(false);

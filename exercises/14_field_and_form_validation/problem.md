@@ -36,11 +36,7 @@ be valid.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (fieldA, validationA, fieldB, validationB, fieldC, validationC) {
-
+module.exports = function (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) {
   return {
     fieldAValid: void 0, //The validity of field A
     fieldBValid: void 0, //The validity of field B

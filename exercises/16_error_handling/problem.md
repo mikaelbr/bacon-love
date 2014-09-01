@@ -26,10 +26,7 @@ observable can be used to for instance show an error-message.
 ## Template
 
 ```js
-// include the Bacon.js library
-var Bacon = require('baconjs');
-
-module.exports = function (asyncTask) {
+module.exports = function (Bacon, asyncTask) {
   var showErrorMessage;
 
   return showErrorMessage;
