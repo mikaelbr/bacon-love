@@ -8,7 +8,7 @@ var run = {
 
   expect: function (stream, exercise, assert) {
     var expectedValue = 10 + 11 + 12 + 13;
-    var isProperty = !!stream.onValue && !stream.toProperty;
+    var isProperty = stream instanceof Bacon.Property;
 
     if (!isProperty) {
       exercise.emit('fail', 'Returned value has to be a property.')
