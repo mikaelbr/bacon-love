@@ -11,19 +11,26 @@ function exerciseNameToTest(name) {
     };
 }
 
+function retryAtMost(maxRetries, fn, lastErrorMessage) {
+    if (!maxRetries) {
+        throw new Error(lastErrorMessage);
+    }
+
+    return fn().then(null, function (reason) {
+        return retryAtMost(maxRetries-1, fn, reason.stdout);
+    });
+}
+
 var tests = menu.map(exerciseNameToTest);
 
 describe('Verify solutions:', function () {
     tests.forEach(function (test) {
         it(test.name, function () {
-            this.timeout(5000);
-            return exec('node . select "' + test.name + '"')
-                .then(function () {
-                    return exec('node . verify ' + test.file)
-                        .then(null, function (reason) {
-                            throw new Error(reason.stdout);
-                        });
-                });
+            this.timeout(30000);
+            return exec('node . select "' + test.name + '"').then(function () {
+                // Retry a few times if it fails, because the 11_samples exercise may be a little unstable
+                return retryAtMost(5, exec.bind({}, 'node . verify ' + test.file));
+            });
         });
     });
 });
