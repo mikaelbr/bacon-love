@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env babel-node
 
 const workshopper = require('workshopper');
 const join = require('path').join;
