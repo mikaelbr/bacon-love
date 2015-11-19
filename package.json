@@ -28,9 +28,13 @@
     }
   ],
   "dependencies": {
+    "babel-core": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.1.1",
+    "babel-preset-es2015": "^6.1.18",
     "baconjs": "^0.7.81",
     "lodash": "^3.10.1",
     "q": "^1.4.1",
+    "semver": "^5.1.0",
     "workshopper": "^2.7.0",
     "workshopper-exercise": "^2.5.3"
   },
