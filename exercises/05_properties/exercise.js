@@ -3,12 +3,21 @@
 var Bacon = require('baconjs');
 var verify = require('../../verify');
 
+function streamIsProperty(stream) {
+    return !!(
+        stream
+        && stream.dispatcher
+        && stream.dispatcher.property
+        && stream.dispatcher.property === stream
+    );
+}
+
 var run = {
   input: void 0,
 
   expect: function (stream, exercise, assert) {
     var expectedValue = 10 + 11 + 12 + 13;
-    var isProperty = !!stream.onValue && !stream.toProperty;
+    var isProperty = streamIsProperty(stream);
 
     if (!isProperty) {
       exercise.emit('fail', 'Returned value has to be a property.')
