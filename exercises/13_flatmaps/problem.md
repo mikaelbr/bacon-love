@@ -97,7 +97,7 @@ We need to take the data specialist stream of tuples and transform it
 to a linear stream (with duplicate values where the number of samples is `> 1`).
 
 **Note**: We are only interested in the data points where the water level
-is below the average water level in Nidelva (`200 000` liters).
+is above the average water level in Nidelva (`200 000` liters).
 
 
 
