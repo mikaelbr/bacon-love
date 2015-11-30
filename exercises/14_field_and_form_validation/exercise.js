@@ -111,6 +111,19 @@ var testing = {
       unsub();
     }
   },
+  'Field B should be valid after invalid, then empty input': {
+    input: run.input,
+    expect: function (streams, ex, assert) {
+      var unsub = streams.fieldBValid
+        .sampledBy(fieldB)
+        .skip(1)
+        .onValue(assert);
+
+      fieldB.push('asd');
+      fieldB.push();
+      unsub();
+    }
+  },
   'Field B should be valid with valid input': {
     input: run.input,
     expect: function (streams, ex, assert) {
