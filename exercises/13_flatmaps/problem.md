@@ -4,7 +4,7 @@ If you have several sources with similar data or want to create
 a new stream based on values in a stream, you can do that. `flatMap`
 is a combinator that allows you to take a function and spawn a new
 EventStream based on an Observable. So `observable.flatMap(fn)`, can
-generate a new EventStream with the values from a EventStream created
+generate a new EventStream with the values from an EventStream created
 in the function `fn`. This is extremely powerful, but can be hard to
 grasp at first.
 
@@ -23,8 +23,8 @@ stream:  10-10-10--50--50--50---100---100---100--->
 ```
 
 With some delay trickery we can clearly see that the EventStreams
-inside the function passed to `flatMap`, is flattened and all it's
-values becomes a part of a new EventStream.
+inside the function passed to `flatMap`, are flattened and all their
+values become part of a new EventStream.
 
 Another way of using `flatMap` is to transform and select data in
 one simple step (map and filter):
