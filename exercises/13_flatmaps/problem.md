@@ -110,7 +110,7 @@ is above the average water level in Nidelva (`200 000` liters).
 
 
 ### Output
- - EventStream with liters from Nidelva. E.g. [190000, 180000, etc]
+ - EventStream with whole liters from Nidelva. E.g. [190000, 180000, etc]
 
 
 ## Template
