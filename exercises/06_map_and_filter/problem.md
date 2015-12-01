@@ -67,10 +67,10 @@ strategical pieces of information:
 passes the sensor.
 - A property which reads the current threat level based on the distance of the
 Zrrk Planet Destroyer.
-  - Low threat for `x>5`.
-  - Medium threat for `5=>x>2`.
-  - High threat for `2=>x>=1`.
-  - Extreme threat for `x<1`.
+  - `'low'` threat for `x>5`.
+  - `'medium'` threat for `5=>x>2`.
+  - `'high'` threat for `2=>x>=1`.
+  - `'extreme'` threat for `x<1`.
 - A stream which emits a 1 for Zrrk ships and a 0 for all other ships which
 passes the sensor, but only after we have achieved extreme threat.
 

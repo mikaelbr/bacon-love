@@ -40,7 +40,8 @@ Inputs are given in the following order:
 
 1. `promise` - A promise that should be wrapped to as a reactive datatype
 2. `eventTarget` - an EventTarget object that emits data on a `data` channel.
-3. `callback` - A callback which when called should give a value on an event stream
+3. `callback` - A function which expects to be called with `'foo', 'bar', cb`, whose
+call to `cb` should be emitted on an event stream.
 
 **In addition** to these values, you should create an event source that emits all
 the values in an array. The array should have 4 incremented values starting with `1`.

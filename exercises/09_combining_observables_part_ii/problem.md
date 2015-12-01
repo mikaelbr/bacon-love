@@ -46,10 +46,10 @@ in peace. The EDF have decided that in order to show signs of good will
 towards the apparently friendly Zrrk to broadcast the withdrawal status of the
 EDF fleet.
 
-The solar system is divided into five sectors, with EDF ships being deployed
-in sector one through four. Your final assignment will be to provide a report
-for the Zrrk commander on the current status of deployed EDF ships in all five
-sectors of the solar system.
+The solar system is divided into five sectors, each named `sectorX` where `X`
+is the sector number, with EDF ships being deployed in sector one through four.
+Your final assignment will be to provide a report for the Zrrk commander on the
+current status of deployed EDF ships in all five sectors of the solar system.
 
 ## Template
 
