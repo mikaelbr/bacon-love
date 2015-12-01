@@ -1,6 +1,6 @@
-module.exports = function (Bacon, clicks, startAsyncTask) {
-  var request = clicks.map(true);
-  var response = request.flatMap(startAsyncTask);
+export default (Bacon, clicks, startAsyncTask) => {
+    const request = clicks.map(true);
+    const response = request.flatMap(startAsyncTask);
 
-  return request.awaiting(response);
+    return request.awaiting(response);
 };

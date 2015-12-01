@@ -1,3 +1,1 @@
-module.exports = function (Bacon) {
-  return Bacon.sequentially(100, [1, 2, 3]);
-};
+export default Bacon => Bacon.sequentially(100, [1, 2, 3]);

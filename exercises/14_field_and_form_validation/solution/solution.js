@@ -1,14 +1,14 @@
-module.exports = function (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) {
-  var a = fieldA.map(validationA).toProperty(false);
-  var b = fieldB.map(function (value) { return value ? validationB(value) : true; }).toProperty(true);
-  var c = fieldC.map(validationC).toProperty(false);
+export default (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
+    const a = fieldA.map(validationA).toProperty(false);
+    const b = fieldB.map(value => value ? validationB(value) : true).toProperty(true);
+    const c = fieldC.map(validationC).toProperty(false);
 
-  var form = a.and(b).and(c);
+    const form = a.and(b).and(c);
 
-  return {
-    fieldAValid: a,
-    fieldBValid: b,
-    fieldCValid: c,
-    formValid: form
-  };
+    return {
+        fieldAValid: a,
+        fieldBValid: b,
+        fieldCValid: c,
+        formValid: form
+    };
 };
