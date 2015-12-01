@@ -5,7 +5,7 @@ This is a Nodeschool-esc workshop module for doing Functional Reactive
 Programming (FRP) using the library [Bacon.js](https://github.com/baconjs/bacon.js).
 
 The goal of this workshop is to learn the concept of FRP while solving
-exercises, and the implemtation it self is not that important. Most
+exercises, and the implementation it self is not that important. Most
 of the methods used in this workshop might as well be used in an alternative
 like [RxJS](https://github.com/Reactive-Extensions/RxJS). The main difference
 is that Bacon adhere to classic theory of FRP (with a distinction between
