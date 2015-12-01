@@ -15,9 +15,9 @@ an EventStream that emits values from both source EventStreams in the order
 they are emitted. To illustrate:
 
 ```js
-var as = Bacon.interval(100, 'a');
-var bs = Bacon.interval(200, 'b').delay(50);
-var abs = as.merge(bs);
+const as = Bacon.interval(100, 'a');
+const bs = Bacon.interval(200, 'b').delay(50);
+const abs = as.merge(bs);
 
 /*
 as:  ---a---a---a---a---a---a>
@@ -37,9 +37,9 @@ result of the combination function on the most recent value on each of the
 source Observables. This behavior is best illustrated with another example:
 
 ```js
-var nums = Bacon.sequentially(100, [1,2,3,4,6]);
-var ones = Bacon.interval(200, 1).delay(50);
-var sum = nums.combine(ones, function (a, b) { return a + b; });
+const nums = Bacon.sequentially(100, [1,2,3,4,6]);
+const ones = Bacon.interval(200, 1).delay(50);
+const sum = nums.combine(ones, (a, b) => a + b);
 
 /*
 nums:  ---1---2---3---4---5---6>
@@ -59,9 +59,9 @@ frequency of the sources. From this behavior follows that the result of a
 `zip` combination is an EventStream. To illustrate with an example:
 
 ```js
-var as = Bacon.interval(100, 'a');
-var bs = Bacon.interval(200, 'b').delay(50);
-var abs = as.zip(bs); //The default zip-function is to just emit a pair [a,b]
+const as = Bacon.interval(100, 'a');
+const bs = Bacon.interval(200, 'b').delay(50);
+const abs = as.zip(bs); //The default zip-function is to just emit a pair [a,b]
 
 /*
 as:  ---a---a---a---a---a---a>
@@ -90,8 +90,8 @@ parameter a tuple on the form `[message, key]`.
 ## Template
 
 ```js
-module.exports = function (Bacon, messages, keys, decoderFunction) {
-  var streamOfDecodedMessages;
+export default (Bacon, messages, keys, decoderFunction) => {
+  const streamOfDecodedMessages;
 
   return streamOfDecodedMessages;
 };

@@ -41,13 +41,11 @@ but the original stream.
 ## Template
 
 ```js
-var streamGenerator = function(Bacon, stream, action, actionOnValue) {
+// expose the stream generator as a module method
+export default (Bacon, stream, action, actionOnValue) => {
   /**
    * Your code
    */
   return originalStream;
 };
-
-// expose the stream generator as a module method
-module.exports = streamGenerator;
 ```

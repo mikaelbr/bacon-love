@@ -8,11 +8,11 @@ pairwise counterparts discussed in the previous exercise.
 As an illustration:
 
 ```js
-var ones = Bacon.interval(100, 1);
-var twos = Bacon.interval(100, 2);
-var threes = Bacon.interval(100, 3);
+const ones = Bacon.interval(100, 1);
+const twos = Bacon.interval(100, 2);
+const threes = Bacon.interval(100, 3);
 
-var result = Bacon.zipAsArray(ones, twos, threes);
+const result = Bacon.zipAsArray(ones, twos, threes);
 
 /*
 ones:    ---1---1---1---1---1--->
@@ -54,8 +54,8 @@ current status of deployed EDF ships in all five sectors of the solar system.
 ## Template
 
 ```js
-module.exports = function (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) {
-  var deploymentReport;
+export default (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) => {
+  const deploymentReport;
 
   return deploymentReport;
 };

@@ -23,8 +23,8 @@ method on the Observable you want to wait on. This can be handy if you
 are trying to time something.
 
 ```js
-var as = Bacon.interval(30, 'a');
-var rs = as.delay(30);
+const as = Bacon.interval(30, 'a');
+const rs = as.delay(30);
 
 /*
 as:  a---a---a---a---a--->
@@ -67,7 +67,7 @@ should be included in your resulting stream.
 ## Template
 
 ```js
-module.exports = function (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) {
+export default (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) => {
   /**
    * Your code here
    **/

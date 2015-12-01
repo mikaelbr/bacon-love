@@ -13,9 +13,9 @@ flatten one or more EventStreams while mapping them (transforming
 values). Let's see how the flattening works by example:
 
 ```js
-var stream = Bacon.sequentially(10, [10, 50, 100]).flatMap(function (delay) {
-  return Bacon.sequentially(10, [delay, delay, delay]).delay(delay);
-});
+const stream = Bacon.sequentially(10, [10, 50, 100]).flatMap(
+    delay => Bacon.sequentially(10, [delay, delay, delay]).delay(delay)
+);
 
 /*
 stream:  10-10-10--50--50--50---100---100---100--->
@@ -30,7 +30,7 @@ Another way of using `flatMap` is to transform and select data in
 one simple step (map and filter):
 
 ```js
-observable.flatMap(function (user) {
+observable.flatMap((user) => {
   if (user.deleted) return Bacon.never();
   return {
     name: user.firstName + ' ' + user.lastName
@@ -63,7 +63,7 @@ we can use a stream to transform it to another stream in simple code.
 ```js
 // Change ms source every second
 // Alternate between 1000 ms, 1500 ms and 500 ms:
-var ms = Bacon.repeatedly(1000, [1000, 1500, 500]);
+const ms = Bacon.repeatedly(1000, [1000, 1500, 500]);
 
 // Create a new EventStream using Bacon.interval
 ms.flatMapLatest(Bacon.interval).map('Bacon!').log();
@@ -116,7 +116,7 @@ is above the average water level in Nidelva (`200 000` liters).
 ## Template
 
 ```js
-module.exports = function (Bacon, riverFlowInCubicFeet, litresInCubicFeet) {
+export default (Bacon, riverFlowInCubicFeet, litresInCubicFeet) => {
   /**
    * Your code here
    **/

@@ -19,7 +19,7 @@ WebSocket/Socket also conforms to the same interface. An example using events
 can be a click of a button in a browser:
 
 ```javascript
-Bacon.fromEventTarget(document.querySelector('button'), 'click').log();
+Bacon.fromEvent(document.querySelector('button'), 'click').log();
 ```
 
 This will log the event object emitted each time a button-element is clicked.
@@ -40,8 +40,8 @@ Inputs are given in the following order:
 
 1. `promise` - A promise that should be wrapped to as a reactive datatype
 2. `eventTarget` - an EventTarget object that emits data on a `data` channel.
-3. `callback` - A function which expects to be called with `'foo', 'bar', cb`, whose
-call to `cb` should be emitted on an event stream.
+3. `callback` - A function which expects to be called with `'foo', 'bar', cb`,
+    whose call to `cb` should be emitted on an event stream.
 
 **In addition** to these values, you should create an event source that emits all
 the values in an array. The array should have 4 incremented values starting with `1`.
@@ -54,15 +54,13 @@ streams, with the keys as defined in the template below.
 ## Template
 
 ```javascript
-var streamGenerator = function (Bacon, promise, eventTarget, callback) {
+// expose the stream generator as a module method
+export default (Bacon, promise, eventTarget, callback) => {
   return {
-    promise: void 0, // return your promise implementation here
+    promise: void 0,     // return your promise implementation here
     eventTarget: void 0, // return your eventTarget implementation here
-    callback: void 0, // return your callback implementation here
-    array: void 0 // return your array implementation here
+    callback: void 0,    // return your callback implementation here
+    array: void 0        // return your array implementation here
   };
 };
-
-// expose the stream generator as a module method
-module.exports = streamGenerator;
 ```

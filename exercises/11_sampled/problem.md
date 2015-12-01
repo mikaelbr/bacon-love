@@ -17,19 +17,19 @@ But we can also have more control of when our samples occur. By using the
 a user input by the click of a button:
 
 ```js
-var button = document.querySelector('button');
-var input = document.querySelector('input');
+const button = document.querySelector('button');
+const input = document.querySelector('input');
 
 // Create a property of a text box
-var text = Bacon.fromEventTarget(input, 'keyup')
+const text = Bacon.fromEvent(input, 'keyup')
                 .map('.currentTarget.value')
                 .toProperty();
 
 // Create an EventStream of true when a button is clicked
-var click = Bacon.fromEventTarget(button, 'click').map(true);
+const click = Bacon.fromEvent(button, 'click').map(true);
 
 // An EventStream with the text of an inputbox when a button is clicked.
-var textOnClick = text.sampledBy(click);
+const textOnClick = text.sampledBy(click);
 ```
 
 By default the `.sampledBy()` method will create a new EventStream with the
@@ -65,7 +65,7 @@ An EventStream of the water level samples.
 ## Template
 
 ```js
-module.exports = function (Bacon, nidelva, leirelva, buttonClicked) {
+export default (Bacon, nidelva, leirelva, buttonClicked) => {
   /**
    * Your code here
    **/
