@@ -26,7 +26,7 @@ we can push values to. We can create an empty EventStream by using `Bacon.Bus()`
 
 Example:
 ```javascript
-var bus = new Bacon.Bus();
+const bus = new Bacon.Bus();
 bus.push('Hello World!');
 bus.end();
 ```
@@ -70,7 +70,7 @@ to do the timing of the data.
 Return created stream
 ```js
 // Export method as a module.
-module.exports = function (Bacon) {
+export default (Bacon) => {
   /**
    * Your code here
    **/

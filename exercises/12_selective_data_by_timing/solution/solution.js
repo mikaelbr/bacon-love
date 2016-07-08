@@ -1,5 +1,4 @@
-module.exports = function (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) {
-  return riverQuality
-              .debounceImmediate(sampleTime)
-              .takeWhile(untilSwitchTurnedOff);
-};
+export default (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) =>
+    riverQuality
+        .debounceImmediate(sampleTime)
+        .takeWhile(untilSwitchTurnedOff);

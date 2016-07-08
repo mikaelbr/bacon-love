@@ -24,7 +24,7 @@ from a input box you could do the following:
 
 Example:
 ```javascript
-var property = Bacon.fromEventTarget(document.querySelector('input'), 'keyup')
+const property = Bacon.fromEvent(document.querySelector('input'), 'keyup')
       .map('.currentTarget.value')
       .toProperty('Default string');
 ```
@@ -44,7 +44,7 @@ number sequence: `10 -> 11 -> 12 -> 13`.
 Return created stream
 ```js
 // Export method as a module.
-module.exports = function (Bacon) {
+export default (Bacon) => {
   /**
    * Your code here
    **/

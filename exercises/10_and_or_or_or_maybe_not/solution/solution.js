@@ -1,9 +1,12 @@
-module.exports = function (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) {
+export default (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
+    const isTooMuchWater = riverFlow
+        .map(flow => flow > riverFlowLimit)
+        .toProperty();
 
-  var shouldReallyNotify = systemActive.and(isSingleGate).or(inCriticalMode).and(isOnBreak.not()).toProperty();
-  var isTooMuchWater = riverFlow.map(function (val) {
-      return val > riverFlowLimit;
-    }).toProperty();
+    const isAllowedToNotify = isOnBreak.not()
+        .and(
+            inCriticalMode.or(systemActive.and(isSingleGate))
+        );
 
-  return isTooMuchWater.and(shouldReallyNotify);
+    return isTooMuchWater.and(isAllowedToNotify);
 };

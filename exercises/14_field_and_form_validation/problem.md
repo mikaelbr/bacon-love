@@ -36,12 +36,12 @@ be valid.
 ## Template
 
 ```js
-module.exports = function (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) {
+export default (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
   return {
     fieldAValid: void 0, //The validity of field A
     fieldBValid: void 0, //The validity of field B
     fieldCValid: void 0, //The validity of field C
-    formValid: void 0 //The validity of the whole form
+    formValid: void 0    //The validity of the whole form
   };
 };
 ```

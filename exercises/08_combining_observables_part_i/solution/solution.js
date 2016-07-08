@@ -1,5 +1,4 @@
-module.exports = function (Bacon, messages, keys, decoderFunction) {
-  return messages
-    .zip(keys)
-    .map(decoderFunction);
-};
+export default (Bacon, messages, keys, decoderFunction) =>
+    messages
+        .zip(keys)
+        .map(decoderFunction);

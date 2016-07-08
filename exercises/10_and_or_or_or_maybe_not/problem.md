@@ -18,9 +18,7 @@ essence, the `.not()` method is just a short-hand for mapping to the
 inverted value:
 
 ```javascript
-myObservable.map(function (val) {
-  return !val;
-})
+myObservable.map(val => !val)
 ```
 
 In this exercise we will see more on how to use conditional operations
@@ -57,7 +55,7 @@ if the report system should be triggered.
 ## Template
 
 ```js
-module.exports = function (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) {
+export default (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
   /**
    * Your code here
    **/

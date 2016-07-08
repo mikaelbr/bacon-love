@@ -17,9 +17,9 @@ Expanding on the `map` example with the clickStream from the previous
 exercise, we can illustrate how a `scan` works:
 
 ```js
-var clickStream = Bacon.fromEventTarget(document.querySelector('button'), 'click');
-var oneStream = clicks.map(function (c) { return 1; });
-var counter = ones.scan(0, function (acc, v) { return acc + v; });
+const clickStream = Bacon.fromEvent(document.querySelector('button'), 'click');
+const oneStream = clicks.map(c => 1);
+const counter = ones.scan(0, (acc, v) => acc + v);
 
 /*
   clickStream: ---c----c--c----c------c-->
@@ -77,7 +77,7 @@ The sensors are the same as the previous exercise.
 ## Template
 
 ```js
-module.exports = function (Bacon, enteringShips, destroyerPosition) {
+export default (Bacon, enteringShips, destroyerPosition) => {
   /**
    * Your code here
    */

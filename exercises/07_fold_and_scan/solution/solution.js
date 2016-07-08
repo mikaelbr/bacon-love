@@ -1,26 +1,21 @@
-module.exports = function (Bacon, enteringShips, destroyerPosition) {
-  var shipTally = enteringShips
-    .filter(function (ship) {
-      return ship.type === 'zrrk';
-    })
-    .map(1)
-    .scan(0, function (acc, v) { return acc + v; });
+export default (Bacon, enteringShips, destroyerPosition) => {
+    const shipTally = enteringShips
+        .filter(ship => ship.type === 'zrrk')
+        .map(1)
+        .scan(0, (acc, v) => acc + v);
 
-  var destroyerHasEntered = destroyerPosition.map(function (pos) { return pos < 1; });
+    const destroyerHasEntered = destroyerPosition.map(distance => distance < 1);
 
-  var threatReport = enteringShips
-    .filter(destroyerHasEntered)
-    .take(5)
-    .fold({}, function (report, ship) {
-      if(!report[ship.type]) {
-       report[ship.type] = 0;
-      }
-      report[ship.type] += 1;
-      return report;
-    });
+    const threatReport = enteringShips
+        .filter(destroyerHasEntered)
+        .take(5)
+        .fold({}, (report, ship) => {
+            if (!report[ship.type]) {
+                report[ship.type] = 0;
+            }
+            report[ship.type] += 1;
+            return report;
+        });
 
-  return {
-    shipTally: shipTally,
-    threatReport: threatReport
-  };
+    return {shipTally, threatReport};
 };

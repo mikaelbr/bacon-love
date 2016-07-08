@@ -10,8 +10,8 @@ Collections.
 An example of how map would work on a stream of clicks from a button:
 
 ```js
-var clicks = Bacon.fromEventTarget(document.querySelector('button'), 'click');
-var ones = clicks.map(function (c) { return 1; });
+const clicks = Bacon.fromEvent(document.querySelector('button'), 'click');
+const ones = clicks.map(c => 1);
 
 /*
   clickStream: ---c----c--c----c------c-->
@@ -36,8 +36,8 @@ source emits a value.
 To illustrate:
 
 ```js
-var values = Bacon.fromEventTarget(document.querySelector('input'), 'keyup');
-var highValues = clicks.filter(function (e) { return e.keyCode > 10; });
+const values = Bacon.fromEvent(document.querySelector('input'), 'keyup');
+const highValues = clicks.filter(e => e.keyCode > 10);
 
 /*
   valueStream: --4----11--3----12------15-->
@@ -86,10 +86,10 @@ Ships entering the solar system will have this information:
 
 
 ```js
-module.exports = function (Bacon, enteringShips, destroyerPosition) {
+export default (Bacon, enteringShips, destroyerPosition) => {
   return {
-    ships: void 0, // Your ship counter goes here
-    threat: void 0, // Your threat level goes here
+    ships: void 0,           // Your ship counter goes here
+    threat: void 0,          // Your threat level goes here
     postArrivalShips: void 0 // Your ship counter post arrival goes here
   };
 };

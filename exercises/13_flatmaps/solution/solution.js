@@ -1,13 +1,11 @@
-module.exports = function (Bacon, riverFlowInCubicFeet, litresInCubicFeet) {
-  return riverFlowInCubicFeet.flatMap(function(flowData) {
-    var cubicFeet = flowData[0];
-    var numberOfSamples = flowData[1];
+export default (Bacon, riverFlowInCubicFeet, litresInCubicFeet) =>
+    riverFlowInCubicFeet
+        .flatMap(([cubicFeet, numberOfSamples]) => {
+            const litres = Math.round(cubicFeet * litresInCubicFeet);
 
-    var litres = Math.round(cubicFeet * litresInCubicFeet);
-
-    if (litres < 200000) {
-      return Bacon.never();
-    }
-    return Bacon.interval(100, litres).take(numberOfSamples);
-  });
-};
+            if (litres > 200000) {
+                return Bacon.interval(100, litres).take(numberOfSamples);
+            } else {
+                return Bacon.never();
+            }
+        });

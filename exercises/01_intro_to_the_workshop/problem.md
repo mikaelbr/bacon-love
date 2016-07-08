@@ -60,12 +60,10 @@ values that sum up to `6`. The interval isn't important.
 With a few exceptions the template to use for all exercises will be the following:
 
 ```javascript
-var streamGenerator = function(Bacon, input1, input2 /* , ..., inputN */ ) {
+// expose the stream generator as a module method
+export default (Bacon, input1, input2 /* , ..., inputN */ ) => {
   // return resulting stream
 };
-
-// expose the stream generator as a module method
-module.exports = streamGenerator;
 ```
 
 **First input will always be the Bacon library. Not all exercises will require the
