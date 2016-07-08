@@ -17,10 +17,10 @@ var exerciser = require('workshopper-exercise');
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 
-var isFirstItemBaconInstance = _.compose(isProbablyBaconInstance, _.sample);
+var isFirstItemBaconInstance = _.flowRight(isProbablyBaconInstance, _.sample);
 
 module.exports = function (tests, testRun, options) {
-  var exercise = _.compose(execute, filecheck)(exerciser());
+  var exercise = _.flowRight(execute, filecheck)(exerciser());
 
   options = options || {};
   var before = options.before || _.noop;
@@ -55,12 +55,12 @@ module.exports = function (tests, testRun, options) {
       callback(null, passed);
     });
 
-    _.each(tests, function (test, testTitle) {
+    _.forEach(tests, (function (test, testTitle) {
       run(this, usersolution, test, testTitle, function (err, success) {
         if (!success) passed = false;
         whenAllTestsDone();
       });
-    }, this);
+    }).bind(this));
   });
 
   return exercise;

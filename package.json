@@ -28,18 +28,18 @@
     }
   ],
   "dependencies": {
-    "babel-core": "^6.2.0",
-    "babel-plugin-add-module-exports": "^0.1.1",
-    "babel-preset-es2015": "^6.1.18",
-    "baconjs": "^0.7.81",
-    "lodash": "^3.10.1",
+    "babel-core": "^6.10.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "baconjs": "^0.7.84",
+    "lodash": "^4.13.1",
     "q": "^1.4.1",
-    "semver": "^5.1.0",
+    "semver": "^5.2.0",
     "workshopper": "^2.7.0",
-    "workshopper-exercise": "^2.5.3"
+    "workshopper-exercise": "^2.7.0"
   },
   "devDependencies": {
     "faithful-exec": "^0.1.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.5.3"
   }
 }
