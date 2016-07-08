@@ -4,6 +4,8 @@ bacon-love – the Workshop for Functional Reactive Programming
 This is a Nodeschool-esc workshop module for doing Functional Reactive
 Programming (FRP) using the library [Bacon.js](https://github.com/baconjs/bacon.js).
 
+[![Build Status](https://travis-ci.org/mikaelbr/bacon-love.svg?branch=master)](https://travis-ci.org/mikaelbr/bacon-love)
+
 The goal of this workshop is to learn the concept of FRP while solving
 exercises, and the implementation it self is not that important. Most
 of the methods used in this workshop might as well be used in an alternative
