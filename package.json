@@ -22,11 +22,7 @@
     "test": "mocha"
   },
   "author": "",
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
     "babel-core": "^6.10.4",
     "babel-plugin-add-module-exports": "^0.2.1",
