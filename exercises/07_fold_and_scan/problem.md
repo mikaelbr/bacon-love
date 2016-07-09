@@ -77,7 +77,7 @@ The sensors are the same as the previous exercise.
 ## Template
 
 ```js
-export default (Bacon, enteringShips, destroyerPosition) => {
+module.exports = (Bacon, enteringShips, destroyerPosition) => {
   /**
    * Your code here
    */

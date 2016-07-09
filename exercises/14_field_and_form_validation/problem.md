@@ -36,7 +36,7 @@ be valid.
 ## Template
 
 ```js
-export default (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
+module.exports = (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
   return {
     fieldAValid: void 0, //The validity of field A
     fieldBValid: void 0, //The validity of field B

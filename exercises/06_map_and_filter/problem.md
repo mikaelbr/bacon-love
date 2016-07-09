@@ -86,7 +86,7 @@ Ships entering the solar system will have this information:
 
 
 ```js
-export default (Bacon, enteringShips, destroyerPosition) => {
+module.exports = (Bacon, enteringShips, destroyerPosition) => {
   return {
     ships: void 0,           // Your ship counter goes here
     threat: void 0,          // Your threat level goes here

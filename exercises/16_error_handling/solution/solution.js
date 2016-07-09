@@ -1,4 +1,4 @@
-export default (Bacon, asyncTask) =>
+module.exports = (Bacon, asyncTask) =>
     asyncTask
         .map(false)
         .mapError(true)

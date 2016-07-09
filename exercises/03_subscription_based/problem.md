@@ -42,7 +42,7 @@ but the original stream.
 
 ```js
 // expose the stream generator as a module method
-export default (Bacon, stream, action, actionOnValue) => {
+module.exports = (Bacon, stream, action, actionOnValue) => {
   /**
    * Your code
    */

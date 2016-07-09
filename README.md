@@ -19,6 +19,8 @@ observables).
 
 ## Install and Start
 
+You need Node.js at least version 4.
+
 Install the workshop by doing
 ```
 npm install -g bacon-love

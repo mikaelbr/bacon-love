@@ -1,4 +1,4 @@
-export default (Bacon, enteringShips, destroyerPosition) => {
+module.exports = (Bacon, enteringShips, destroyerPosition) => {
     const shipTally = enteringShips
         .filter(ship => ship.type === 'zrrk')
         .map(1)

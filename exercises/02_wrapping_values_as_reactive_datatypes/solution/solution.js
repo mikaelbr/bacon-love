@@ -1,5 +1,5 @@
 // Export method taking in the correct arguments.
-export default (Bacon, promise, eventTarget, callback) => ({
+module.exports = (Bacon, promise, eventTarget, callback) => ({
     // When the promise is resolved a value is sent through the event stream
     // created from Bacon.fromPromise
     promise: Bacon.fromPromise(promise),

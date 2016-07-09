@@ -1,4 +1,4 @@
-export default (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
+module.exports = (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
     const isTooMuchWater = riverFlow
         .map(flow => flow > riverFlowLimit)
         .toProperty();

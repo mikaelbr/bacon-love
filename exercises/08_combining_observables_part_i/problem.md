@@ -90,7 +90,7 @@ parameter a tuple on the form `[message, key]`.
 ## Template
 
 ```js
-export default (Bacon, messages, keys, decoderFunction) => {
+module.exports = (Bacon, messages, keys, decoderFunction) => {
   const streamOfDecodedMessages;
 
   return streamOfDecodedMessages;

@@ -61,7 +61,7 @@ With a few exceptions the template to use for all exercises will be the followin
 
 ```javascript
 // expose the stream generator as a module method
-export default (Bacon, input1, input2 /* , ..., inputN */ ) => {
+module.exports = (Bacon, input1, input2 /* , ..., inputN */ ) => {
   // return resulting stream
 };
 ```

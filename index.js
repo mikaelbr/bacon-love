@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('./enforce-node-version')();
+
 const workshopper = require('workshopper');
 const join = require('path').join;
 

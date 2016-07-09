@@ -17,7 +17,7 @@ waiting for the result of an async operation.
 ## Template
 
 ```js
-export default (Bacon, clicks, startAsyncTask) => {
+module.exports = (Bacon, clicks, startAsyncTask) => {
   const spinnerVisibility;
 
   return spinnerVisibility;

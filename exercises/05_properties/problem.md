@@ -44,7 +44,7 @@ number sequence: `10 -> 11 -> 12 -> 13`.
 Return created stream
 ```js
 // Export method as a module.
-export default (Bacon) => {
+module.exports = (Bacon) => {
   /**
    * Your code here
    **/
