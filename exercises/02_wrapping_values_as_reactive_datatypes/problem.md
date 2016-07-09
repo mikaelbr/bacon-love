@@ -26,9 +26,9 @@ This will log the event object emitted each time a button-element is clicked.
 Don't think too much of the `.log()` method just yet, we will cover this and
 more in the next exercise.
 
-Refer to [Creating Stream](https://github.com/baconjs/bacon.js#creating-
-streams) for more wrappers and examples of creating reactive datatypes from
-different sources.
+Refer to [Creating Stream
+](https://github.com/baconjs/bacon.js#creating-streams) for more wrappers and
+examples of creating reactive datatypes from different sources.
 
 
 ## Problem Description
