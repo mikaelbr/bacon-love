@@ -1,13 +1,11 @@
 'use strict';
 
-var semver = require('semver');
-var canUseES2015 = semver.satisfies(process.versions.node, '>=4');
-if (canUseES2015) {
-  require('babel-core/register')({
-    presets: [require('babel-preset-es2015')],
-    plugins: [require('babel-plugin-add-module-exports')]
-  });
-}
+require('./enforce-node-version')();
+
+require('babel-core/register')({
+  presets: [require('babel-preset-es2015')],
+  plugins: [require('babel-plugin-add-module-exports')]
+});
 
 var path = require('path');
 
@@ -43,7 +41,7 @@ module.exports = function (tests, testRun, options) {
     }
 
     if(typeof usersolution !== 'function'){
-      this.emit('fail', 'You should always return a function using module.exports' + (canUseES2015 ? ' or export default.' : '.'));
+      this.emit('fail', 'You should always return a function using module.exports or export default.');
       return callback(null, false);
     }
 
