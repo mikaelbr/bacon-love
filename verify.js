@@ -2,11 +2,6 @@
 
 require('./enforce-node-version')();
 
-require('babel-core/register')({
-  presets: [require('babel-preset-es2015')],
-  plugins: [require('babel-plugin-add-module-exports')]
-});
-
 var path = require('path');
 
 var _ = require('lodash');
@@ -41,7 +36,7 @@ module.exports = function (tests, testRun, options) {
     }
 
     if(typeof usersolution !== 'function'){
-      this.emit('fail', 'You should always return a function using module.exports or export default.');
+      this.emit('fail', 'You should always return a function using module.exports.');
       return callback(null, false);
     }
 

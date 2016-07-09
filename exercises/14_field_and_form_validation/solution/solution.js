@@ -1,4 +1,4 @@
-export default (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
+module.exports = (Bacon, fieldA, validationA, fieldB, validationB, fieldC, validationC) => {
     const a = fieldA.map(validationA).toProperty(false);
     const b = fieldB.map(value => value ? validationB(value) : true).toProperty(true);
     const c = fieldC.map(validationC).toProperty(false);

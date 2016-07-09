@@ -54,7 +54,7 @@ current status of deployed EDF ships in all five sectors of the solar system.
 ## Template
 
 ```js
-export default (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) => {
+module.exports = (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) => {
   const deploymentReport;
 
   return deploymentReport;

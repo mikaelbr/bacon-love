@@ -1,5 +1,5 @@
 // Export method taking in the correct arguments.
-export default Bacon => {
+module.exports = Bacon => {
     const bus = Bacon.Bus();
     setTimeout(() => bus.push('Bacon'), 100);
     setTimeout(() => bus.push('is'), 200);

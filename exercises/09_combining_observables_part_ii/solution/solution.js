@@ -1,4 +1,4 @@
-export default (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) =>
+module.exports = (Bacon, sector1Count, sector2Count, sector3Count, sector4Count) =>
     Bacon.combineTemplate({
         sector1: sector1Count,
         sector2: sector2Count,

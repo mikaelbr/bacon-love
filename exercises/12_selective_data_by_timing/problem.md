@@ -67,7 +67,7 @@ should be included in your resulting stream.
 ## Template
 
 ```js
-export default (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) => {
+module.exports = (Bacon, riverQuality, untilSwitchTurnedOff, sampleTime) => {
   /**
    * Your code here
    **/

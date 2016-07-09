@@ -65,7 +65,7 @@ An EventStream of the water level samples.
 ## Template
 
 ```js
-export default (Bacon, nidelva, leirelva, buttonClicked) => {
+module.exports = (Bacon, nidelva, leirelva, buttonClicked) => {
   /**
    * Your code here
    **/

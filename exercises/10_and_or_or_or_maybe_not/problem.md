@@ -55,7 +55,7 @@ if the report system should be triggered.
 ## Template
 
 ```js
-export default (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
+module.exports = (Bacon, riverFlow, inCriticalMode, isOnBreak, isSingleGate, systemActive, riverFlowLimit) => {
   /**
    * Your code here
    **/

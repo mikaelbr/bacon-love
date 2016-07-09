@@ -55,7 +55,7 @@ streams, with the keys as defined in the template below.
 
 ```javascript
 // expose the stream generator as a module method
-export default (Bacon, promise, eventTarget, callback) => {
+module.exports = (Bacon, promise, eventTarget, callback) => {
   return {
     promise: void 0,     // return your promise implementation here
     eventTarget: void 0, // return your eventTarget implementation here

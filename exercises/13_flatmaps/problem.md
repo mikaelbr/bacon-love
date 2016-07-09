@@ -116,7 +116,7 @@ is above the average water level in Nidelva (`200 000` liters).
 ## Template
 
 ```js
-export default (Bacon, riverFlowInCubicFeet, litresInCubicFeet) => {
+module.exports = (Bacon, riverFlowInCubicFeet, litresInCubicFeet) => {
   /**
    * Your code here
    **/

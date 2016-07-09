@@ -1,4 +1,4 @@
-export default (Bacon, enteringShips, destroyerPosition) => {
+module.exports = (Bacon, enteringShips, destroyerPosition) => {
     const ships = enteringShips.map(ship => ship.type === 'zrrk' ? 1 : 0);
 
     const threat = destroyerPosition.map(distance => {
