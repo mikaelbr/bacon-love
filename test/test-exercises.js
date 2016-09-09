@@ -1,10 +1,15 @@
 var path = require('path');
 var exec = require('faithful-exec');
 var menu = require('../exercises/menu.json');
-var dirFromName = require('workshopper/util').dirFromName;
+
+function dirFromName (id) {
+  return id.toLowerCase()
+    .replace(/\s/g, '_')
+    .replace(/[^\w]/gi, '');
+}
 
 function exerciseNameToTest(name) {
-    var dirName = dirFromName(path.join(__dirname, '..', 'exercises'), name);
+    var dirName = path.join(__dirname, '..', 'exercises', dirFromName(name));
     return {
         name: name,
         file: path.join(dirName, 'solution', 'solution.js')
