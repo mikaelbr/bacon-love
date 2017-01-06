@@ -28,7 +28,7 @@
     "lodash": "^4.13.1",
     "q": "^1.4.1",
     "semver": "^5.2.0",
-    "workshopper": "^2.7.0",
+    "workshopper-adventure": "^4.7.1",
     "workshopper-exercise": "^2.7.0"
   },
   "devDependencies": {
