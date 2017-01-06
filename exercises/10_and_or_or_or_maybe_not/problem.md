@@ -28,15 +28,15 @@ with properties.
 # Problem Description
 
 In Trondheim, Norway, there is a river called Nidelva. The average flow
-in some areas of Nidelva is about 200 000 liters per second. Let's say
-there is a limit of how much water a specific dam can handle and
-we need a report system that notifies the workers if this limit is reached.
+in some areas is about 200 000 liters per second. There is a limit of how
+much water a specific dam can handle and we need a reporting system that
+notifies the workers if this limit has been exceeded.
 
 We are only interested in having the report-system active if it is turned
 on and only one of the water gates are open, or if the system is in critical
 mode (this trumps if the system is active and if more than one gate is open).
 
-The people working as this particular dam is passionate about lunch, and
+The people working at this particular dam is passionate about lunch, and
 won't be bothered in the lunch time.
 
 Remember we only want to be reported if the river flow is above a specific
@@ -48,7 +48,7 @@ report system, or `false` if there is no worries.
 
 ## Hint and Tips:
 
-You should create two properties firstly: if we should report and if the
+You should create two properties first: if we should report and if the
 river limit is exceeded. After you have these you should be able to find
 if the report system should be triggered.
 
