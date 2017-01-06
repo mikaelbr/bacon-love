@@ -22,7 +22,7 @@ about the logic separately from the DOM.
 
 ## Problem Description
 
-You will be supplied with streams of two different input-fields, each with
+You will be supplied with streams of three different input-fields, each with
 their own validation function which takes a value as input and returns whether
 the value is valid or not.
 
@@ -32,6 +32,14 @@ a whole is valid.
 
 Field A and C is required. Field B is optional, but if it has a value it must
 be valid.
+
+## Hint and Tips
+
+Since our validation needs to have a constant state representation, it makes
+sense for them to be represented as a property rather than an eventStream.
+
+Make sure that each of the field validation output observables has an initial
+value attached to it.
 
 ## Template
 
