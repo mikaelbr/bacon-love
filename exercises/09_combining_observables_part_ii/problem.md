@@ -51,7 +51,7 @@ is the sector number, with EDF ships being deployed in sectors one through four.
 Your final assignment will be to provide a report for the Zrrk commander on the
 current status of deployed EDF ships in all five sectors of the solar system.
 
-Since no EDF ships are deployed to sector 5, that part of the report should
+Since no EDF ships are deployed to sector five, that part of the report should
 always return zero.
 
 ## Template
